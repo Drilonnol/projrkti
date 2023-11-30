@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="projekti.css">
 <link rel="Website icon" href="wi7636f219-wizz-air-logo-finding-an-airline-with-pets-petrot (2).png">
 </head>
-<body style="background-color: white;">
+<body style="background-color:rgb(223, 229, 235);" id="mainBody">
     <div  class="g">
         <div class="a">
         <div id="a1"><img style="height: 50px; " src="wi7636f219-wizz-air-logo-finding-an-airline-with-pets-petrot (1).png" alt="Wizz Air" ></div>
@@ -12,18 +12,8 @@
         <div id="a5">Home</div>
         <div id="a2">Center</div>
         <div id="a3">New</div>
-        
-        <div id="a4" onclick="openmenu()">Menu
-            <div class="pe" id="menu"> <p onclick="closemenu()">cancel</p>
-                <hr>
-    <p>ssssss</p>
-    <p>ssssss</p>
-    <p>ssssss</p>        
-            
-            </div>
-
-        </div>
-    </div>
+        <divid id="a4"><button id="loginn">Log in</button></div>
+    
     </div>
   
 <div class="b">
@@ -38,26 +28,76 @@
     
 </div>
 </div>
+<h2 id="h21">Cheap flight offers - 4 routes from your area</h2>
 <div class="box1">
-<div> <img style="height: 240px; width: 340px;" src="US0BgM.jpg" alt=""><p>TAhiti</p></div>
 
-<div><img style="height: 240px;width: 340px;" src="se.jpg" alt=""><p>Albania</p></div>
-
-<div><img style="height: 240px;width: 340px;" src="istanbul-nigth-turkey-shutterstock_250783048.jpg" alt=""><p>istamboll</p></div>
-
-<div><img style="height: 240px;width: 340px;"src="r4.jpg" alt=""><p>Dubai</p></div>
+<div id="bb1"><img style="height: 240px; width: 340px;" src="US0BgM.jpg" alt=""><p>TAhiti</p></div>
+<div id="bb2"><img style="height: 240px;width: 340px;" src="se.jpg" alt=""><p>Albania</p></div>
+<div id="bb3"><img style="height: 240px;width: 340px;" src="istanbul-nigth-turkey-shutterstock_250783048.jpg" alt=""><p>istamboll</p></div>
+<div id="bb4"><img style="height: 240px;width: 340px;"src="r4.jpg" alt=""><p>Dubai</p></div>
 
 </div>
-<script>
-var menu = document.getElementById("menu");
 
-function closemenu(){
 
-    menu.style.clear=closemenu();
-}
-function openmenu(){
+<div class="largo" id="loginFormContainer">
+  
+    <div class="log">
+<form action="ds"> 
 
-menu.style.top = "17%";
-}
-</script>
+    <h2>Login Form</h2>
+   
+    <p>EMAIL</p>
+   <input type="text" >
+   <p>PASSWORD</p>
+
+  <input type="password" >
+<div class="d1s"> <p><input type="checkbox"> remember me</p>
+<p>forgot password?</p>
+
+</div>
+<button>LOGIN NOW</button>
+<p id="aaa1">Already have an account <a href="#" id="singup">Sing up</a></p>
+
+<button type="button" id="cancelBtn">CANCEL</button>
+   
+</form>
+ </div>
+
+
+
+    </div>
+</div>
+</div>
+<div class="poz1">
+    <img src="AdobeStock_191311041.jpeg" style ="height: 70px;"><p></p>
+    <img src="wizz-air-a321neo.jpg" style="height:70px ;">
+</div>
+</section>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Contact Information</h3>
+            <p>Email: info@wizzair.com</p>
+            <p>Phone: +123 456 789</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Flights</a></li>
+                <li><a href="#">Hotels</a></li>
+                <li><a href="#">Cars</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Wizz Air. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+
+
+<script src="scrip.js"></script>
 </body>
