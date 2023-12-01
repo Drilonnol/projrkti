@@ -4,9 +4,9 @@
 
 
 .a{
-background-color:black;
-display: flex;
-font-size: large;
+    background-color: black;
+   display:flex ;
+   font-size: large;
 
 }
 #a1{
@@ -299,4 +299,7 @@ a:hover {
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
+}
+fieldset{
+    display: flex;
 }

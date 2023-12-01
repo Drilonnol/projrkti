@@ -12,8 +12,8 @@
         <div id="a5">Home</div>
         <div id="a2">Center</div>
         <div id="a3">New</div>
-        <divid id="a4"><button id="loginn">Log in</button></div>
-    
+        <div id="a4"><button id="loginn">Log in</button></div>
+    </div>
     </div>
   
 <div class="b">
@@ -22,8 +22,39 @@
     <div id="b3"><div><img style="height: 30px;" src="r2.gif" alt=""></div>CARS</div>
 </div>
 <div class="c">
-    <div><input type="checkbox"></div>
-    <div></div>
+    <div> <fieldset>
+        <br>
+        <div class="kerko">
+            <b>
+            <p><input type="radio" name="fluturimet" > Njedrejtimshe 
+                <input type="radio" name="fluturimet"> Dydrejtimshe</p>
+                </b> 
+                    <select id="seleksioni1" name="Origina">
+                        <option value="opsion1">Prishtina </option>
+                        <option value="opsion2">Tirana </option>
+                        <option value="opsion3">Stambolli</option>
+                        <option value="opsion4">Bade baden</option>
+                        <option value="opsion5">Tahiti</option>
+                        <option value="opsion6">Gjakove</option>
+                    </select>
+                   <select id="seleksioni2" name="seleksioni2">
+                        <option value="opsionA"></option>
+                        <option value="opsionA">Prishtina </option>
+                        <option value="opsionB">Tirana B</option>
+                        <option value="opsionC">Stambolli C</option>
+                        <option value="opsion4">Bade baden</option>
+                        <option value="opsion5">Tahiti</option>
+                        <option value="opsion6">Gjakove</option>
+                    </select>
+                    <a class="info">
+                        <input type="date">
+                        <input type="number">
+                        <input type="submit" value="Search">
+                    </a> 
+            </div>
+ <br>
+</fieldset></div>
+   
 
     
 </div>
@@ -46,16 +77,18 @@
 
     <h2>Login Form</h2>
    
-    <p>EMAIL</p>
-   <input type="text" >
-   <p>PASSWORD</p>
+    <label><p>EMAIL</p></label>
+    <input type="text" class="email" id="email">
+  <label><p>PASSWORD</p></label> 
 
-  <input type="password" >
+  <input type="password" class="pass" id="pass">
 <div class="d1s"> <p><input type="checkbox"> remember me</p>
 <p>forgot password?</p>
 
 </div>
+<div class="loginnow">
 <button>LOGIN NOW</button>
+</div>
 <p id="aaa1">Already have an account <a href="#" id="singup">Sing up</a></p>
 
 <button type="button" id="cancelBtn">CANCEL</button>
