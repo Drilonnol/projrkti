@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body html{
+    width: 100%;
+    height: 100%;
+}
+.headeri{
+    background-color: #0E1397;
+}
+.headeri img{
+    width: 10%;
+    height: 10%;
+}
+
+
+
+.meny{
+    float: inline-end;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 20px;
+}
+.meny .active{
+    text-decoration: none;
+    margin: 0 0.75em 0 0.75em;
+    list-style-type: none;
+}
+.meny:hover a{
+    color: #575757;
+}
+.meny:hover a:hover {
+    color: #8EAAFB;
+    box-shadow: 0 2px 0 0 currentColor;
+}
