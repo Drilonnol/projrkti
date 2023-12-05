@@ -12,10 +12,13 @@ body html{
 .headeri img{
     width: 10%;
     height: 10%;
+    margin-right: 3%;
 }
 
 
-
+.active a{
+    color: white;
+}
 .meny{
     float: inline-end;
     display: flex;
@@ -29,9 +32,9 @@ body html{
     list-style-type: none;
 }
 .meny:hover a{
-    color: #575757;
+    color: white;
 }
 .meny:hover a:hover {
-    color: #8EAAFB;
+    color: lightblue;
     box-shadow: 0 2px 0 0 currentColor;
 }
