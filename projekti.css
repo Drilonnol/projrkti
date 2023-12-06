@@ -29,7 +29,12 @@ margin-right: 20px;
             color: white;
             
             }
-          
+            #a6 button{
+                margin-right: 20px;
+            background-color: black;
+            padding: 10px 20px 4px 4px;
+            color: white;
+            }
           
 .b{
     background: transparent;
@@ -42,7 +47,7 @@ margin-right: 20px;
     border-radius: 20px 20px 0% 0%;
    text-align: center;
     color: brown;
- 
+
     
 }
 #h21{
@@ -61,12 +66,14 @@ backdrop-filter:blur(20px);
     margin-right: 5%;
     border-radius: 0px 5px 5px 5px;
     padding-bottom: 3%;
+    border: none;
 }
 .b div:hover{
 color: black;
 background-color: white;
 padding-bottom: -1%;
 backdrop-filter:blur(10px);
+
 }
 
 #b1{
@@ -83,15 +90,7 @@ backdrop-filter:blur(10px);
     justify-content: space-between;
     
 }
-#b1:hover{
-    background-color: white;
-}
-#b2:hover{
-    background-color: white;
-}
-#b3:hover{
-    background-color: white;
-}
+
 #b2{
     background: transparent;
     padding-top:1%;
@@ -185,8 +184,8 @@ position: absolute;
     left: 40%;
     background-color: white;
 padding-top: 1%;
-padding-left: 5%;
-padding-right: 4%;
+padding-left: 3%;
+padding-right: 3%;
 padding-bottom: 4%;
 border-radius: 10px 10px 10px 10px;
 text-align: start;
@@ -203,30 +202,32 @@ border-style: ridge;
 .largo h2{
     margin-bottom: 20%;
     margin-left: 18%;
-    
-   
+ 
  
   
-}
+}.shtyje{ 
+  margin-left: 5%;  
+   }
 .largo input{
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: -20%;
-padding-right: 50%;
+    margin-left: -10%;
+padding-right: 40%;
     border-radius: 10px 10px 10px 10px;
     border: ridge;
     background: transparent;
 backdrop-filter:blur(20px);
+
 }
 .largo p{
-    margin-left: -20%;
+    margin-left: -10%;
 }
 .d1s {
     display: flex;
    justify-content: space-around;
 } .largo button{
     
-    margin-top: 15%;
+    margin-top: 5%;
     padding-left: 28%;
     padding-right: 34%;
     padding-top: 5%;
@@ -239,6 +240,10 @@ border-radius: 10px 10px 10px 10px;
 #aaa1{
     text-align: center;
   
+}
+#singin{
+   padding-right: 37%;
+    padding-left: 36%;
 }
 .singup{
     display: none;
@@ -302,4 +307,77 @@ a:hover {
 }
 fieldset{
     display: flex;
+}
+.singin{
+
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    background-color: white;
+padding-top: 1%;
+padding-left: 5%;
+padding-right: 6%;
+padding-bottom: 4%;
+border-radius: 10px 10px 10px 10px;
+text-align: start;
+background-color:aliceblue;
+backdrop-filter:blur(20px);
+border-style: ridge;
+
+}
+.singin button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+   background-color: lightblue;
+     padding-right:37%;
+     border-radius: 20px 20px 20px 20px;
+      padding-left: 37%;
+      backdrop-filter:blur(20px);
+      margin-top: 8%;
+
+}
+.singin input{
+   
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: -20%;
+    padding-right: 50%;
+    border-radius: 10% 10% 10% 10%;
+
+    background: transparent;
+backdrop-filter:blur(20px);
+}.singin h2{
+margin-bottom: 20%;
+margin-left: -10%;
+margin-right: -10%;
+background-color: lightslategray;
+padding: 3% 15% 3% 25%;
+border-radius: 10px 10px 10px 10px;
+border: ridge;
+
+}
+#singinBtn{
+text-align: center;
+padding-left: 40%;
+padding-right: 39%;
+
+}   
+#registerContainer {
+    display: none;
+}
+#registerContainer.active {
+    display: block;
+}
+.b button{
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 5px;
+padding-right: 5px;
+margin-left: 1%;
+background: transparent;
+border-radius: 10px 10px 0px 0px;
+}
+.b button:hover{
+    background-color: white;
+    border:  none;
 }

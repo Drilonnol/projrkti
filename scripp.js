@@ -103,29 +103,3 @@ document.getElementById('cancelBtnSingin').addEventListener('click',function(){
 var registerContainer = document.getElementById('registerContainer');
 registerContainer.classList.remove('active');
 });
-
-function showPopup(popupId) {
-    document.getElementById(popupId).style.display = 'block';
-}
-
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = 'none';
-}
-
-document.getElementById('button1').addEventListener('click', function () {
-    showPopup('popup1');
-    closePopup('popup2');
-    closePopup('popup3');
-});
-
-document.getElementById('button2').addEventListener('click', function () {
-    showPopup('popup2');
-    closePopup('popup1');
-    closePopup('popup3');
-});
-
-document.getElementById('button3').addEventListener('click', function () {
-    showPopup('popup3');
-    closePopup('popup1');
-    closePopup('popup2');
-});
