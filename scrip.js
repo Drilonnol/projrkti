@@ -129,3 +129,34 @@ document.getElementById('button3').addEventListener('click', function () {
     closePopup('popup1');
     closePopup('popup2');
 });
+
+
+
+
+
+
+
+
+
+let slideIndex = 0;
+
+function showSlides() {
+  let slides = document.querySelectorAll('.slideshow-container .slide');
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';  
+  }
+  
+  slideIndex++;
+  
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }  
+  
+  slides[slideIndex - 1].style.display = 'block';  
+  setTimeout(showSlides, 2000); // Ndrysho slide çdo 2 sekonda
+}
+
+// Thirr showSlides që të fillojë animacioni kur ngarkohet faqja
+showSlides();
+
