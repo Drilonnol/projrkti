@@ -97,3 +97,35 @@ body html{
     transition-delay: 0.3s;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+
+.slideshow-container {
+    width: 100%;
+    height: 56.25vw; /* (16/9)*100 = 56.25 */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Kjo do të mbajë raportin 16:9 të imazhit */
+  }
+  .fade {
+    animation: fade 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
