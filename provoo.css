@@ -39,6 +39,7 @@
                }
              
    .b{
+       
        background: transparent;
        display: flex;
        font-size: medium;
@@ -123,7 +124,7 @@
    .g{
        width: 100%;
        height:100%;
-      background-image: url(airoporti.png);
+      
       padding-bottom:30%;
       background-size: cover;
        background-position: center;
@@ -477,4 +478,30 @@
     width: 100%;
     height: 100%;
     aspect-ratio: 16/9
+}
+.slideshow-container {
+    margin-right: 0%;
+    position: absolute;
+    margin: auto;
+    margin-top: -7%;
+}
+.slideshow-container img{
+    height: 50%;
+    width: 100%;
+}
+.slide img{
+    height: auto;
+    width: 100%;
+
+    
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }
