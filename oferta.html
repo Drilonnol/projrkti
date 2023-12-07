@@ -4,41 +4,174 @@
         <title>Oferta</title>
         <link rel="stylesheet" href="provoo.css">
     </head>
+    <style>
+        .tablink {
+        background-color: #555;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+        }
+
+        .tablink:hover {
+        background-color: #777;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+        display: flex;
+        margin-bottom: 2px;
+        margin-top: 2px;
+        color: black;
+        height: 100%;
+        }
+        .tabcontent img{
+            display: flex;
+            flex-direction: row;
+        }
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .hotel-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .hotel-box {
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hotel-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .hotel-info {
+            padding: 15px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        p {
+            margin: 0;
+            color: #555;
+        }
+       
+    </style>
     <body >
-        <div class="flex">
-            <div class="fluturimi">
-                <div>   <p>Zurich 🇨🇭 ✈︎ Skopje 🇲🇰  <b> 59.00$ </b> </p> </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+        <button class="tablink" onclick="openPage('Hotels')" id="defaultOpen">Hotels</button>
+        <button class="tablink" onclick="openPage('News')" id="defaultOpen">Biletat</button>
+        <button class="tablink" onclick="openPage('Contact')"id="defaultOpen">Contact</button>
+        <button class="tablink" onclick="openPage('About')"id="defaultOpen">About</button>
+
+        <div id="Hotels" class="tabcontent">
+            <br>
+            <div class="hotel-container">
+                <div class="hotel-box">
+                    <img class="hotel-img" src="hotel1.png" alt="Hotel 1">
+                    <div class="hotel-info">
+                        <h2>Hotel ne Frakfurt</h2>
+                        <p>Vikendë në Gjermani (1/nate e 2/ditë) në hotelin më të mirë në çendër të qytetit të Frankfurtit.<b>Per vetem 300€</b></p>
+                    </div>
                 </div>
-            <div class="fluturimi">
-                <div>   <p>Basel 🇨🇭 ✈︎ Prishtin   <b> 79.00$ </b>    03.12.2023</p> </div>
-            </div>
-            <div class="fluturimi">
-                <div>   <p>Berlin ✈︎ Skopje 🇲🇰  <b> 159.00$ </b>    05.12.2023</p> </div>
-            </div>
-            <div class="fluturimi">
-                <div>   <p>Stamboll ✈︎ Tirana 🇦🇱   <b> 99.00$ </b>    01.12.2023</p> </div>
-            </div>
-            <div class="fluturimi">
-                <div>   <p>Paris 🇫🇷 ✈︎ Prishtin   <b> 59.00$ </b>    08.12.2023</p> </div>
-            </div>
-            <div class="fluturimi">
-                <div>   <p>Viena 🇦🇹 ✈︎ Prishtin   <b> 59.00$ </b>    07.12.2023</p> </div>
-            </div>
-            <div class="fluturimi">
-                <div>   <p>Lisbon 🇵🇹 ✈︎ Prishtin   <b> 59.00$ </b>    09.12.2023</p> </div>
-            </div>
-            <div class="fluturimi">
-                <div>   <p>Budapest🇭🇺 ✈︎ Prishtin <b> 59.00$ </b>    10.12.2023</p> </div>
-            </div>
-            <div class="fluturimi">
-                <div>   <p>Budapest🇭🇺 ✈︎ Prishtin   <b> 59.00$ </b>    12.12.2023</p> </div>
-            </div>
+            
+                <div class="hotel-box">
+                    <img class="hotel-img" src="hotel2.png" alt="Hotel 2">
+                    <div class="hotel-info">
+                        <h2>Hotel ne Rome</h2>
+                        <p>Vikendë në Rome (1/nate e 2/ditë) në hotelin më të mirë në çendër të qytetit të Romes.<b>Per vetem 190€</b> </p>
+                    </div>
+                </div>
+
+                <div class="hotel-box">
+                    <img class="hotel-img" src="hotel4.png" alt="Hotel 3">
+                    <div class="hotel-info">
+                        <h2>Hotel ne Spain</h2>
+                        <p>OTEL BONITA Classic - DURRËS📣
+                            /  35€ 𝐧𝐚𝐭𝐚 𝐩𝐞̈𝐫 𝐩𝐞𝐫𝐬𝐨𝐧 , 𝐦𝐞̈𝐧𝐠𝐣𝐞𝐬,  𝐩𝐢𝐬𝐡𝐢𝐧 𝐝𝐡𝐞 𝐩𝐥𝐚𝐳𝐡! </p>
+                    </div>
+                </div>
+
+                <div class="hotel-box">
+                    <img class="hotel-img" src="hotel6.png" alt="Hotel 4">
+                    <div class="hotel-info">
+                        <h2>Hotel ne Shqiperi</h2>
+                        <p>HOTEL BONITA Classic - DURRËS📣
+                            /  35€ 𝐧𝐚𝐭𝐚 𝐩𝐞̈𝐫 𝐩𝐞𝐫𝐬𝐨𝐧 , 𝐦𝐞̈𝐧𝐠𝐣𝐞𝐬,  𝐩𝐢𝐬𝐡𝐢𝐧 𝐝𝐡𝐞 𝐩𝐥𝐚𝐳𝐡!</p>
+                    </div>
+                </div>
+               
+                <div class="hotel-box">
+                    <img class="hotel-img" src="hotel8.png" alt="Hotel 4">
+                    <div class="hotel-info">
+                        <h2>Hotel Viena</h2>
+                        <p>Vikendë në Austri (1/nate e 2/ditë) në hotelin më të mirë në çendër të qytetit të Vienes.<b>Per vetem 210€</b> </p>
+                    </div>
+                </div>
+                
+                <div class="hotel-box">
+                    <img class="hotel-img" src="hotel10.png" alt="Hotel 4">
+                    <div class="hotel-info">
+                        <h2>Hotel Dubai</h2>
+                        <p>HOTEL DUBAI Classic - DUBAI📣
+                            /  60€ 𝐧𝐚𝐭𝐚 𝐩𝐞̈𝐫 𝐩𝐞𝐫𝐬𝐨𝐧 , 𝐦𝐞̈𝐧𝐠𝐣𝐞𝐬,  𝐩𝐢𝐬𝐡𝐢𝐧 𝐝𝐡𝐞 𝐩𝐥𝐚𝐳𝐡!.</p>
+                    </div>
+                </div>
+           
+          </div>
+          <div id="Hotels" class="tabcontent">
+            
+          </div>
           
-            <div class="video"> 
-                <video  autoplay loop muted plays-inline>
-                    <source src="Video.mp4" type="video/mp4">
-                </video>
-            </div>
+          <div id="Cars" class="tabcontent">
+            <h3>Contact</h3>
+            <p>Get in touch, or swing by for a cup of coffee.</p>
+          </div>
+          
+          <div id="About" class="tabcontent">
+            <h3>About</h3>
+            <p>Who we are and what we do.</p>
+          </div>
+          
+        
+    <script>
+        function openPage(pageName,elmnt,color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+            }
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+    </script>
       
     </body>
 
