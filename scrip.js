@@ -104,40 +104,6 @@ var registerContainer = document.getElementById('registerContainer');
 registerContainer.classList.remove('active');
 });
 
-function showPopup(popupId) {
-    document.getElementById(popupId).style.display = 'block';
-}
-
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = 'none';
-}
-
-document.getElementById('button1').addEventListener('click', function () {
-    showPopup('popup1');
-    closePopup('popup2');
-    closePopup('popup3');
-});
-
-document.getElementById('button2').addEventListener('click', function () {
-    showPopup('popup2');
-    closePopup('popup1');
-    closePopup('popup3');
-});
-
-document.getElementById('button3').addEventListener('click', function () {
-    showPopup('popup3');
-    closePopup('popup1');
-    closePopup('popup2');
-});
-
-
-
-
-
-
-
-
-
 let slideIndex = 0;
 
 function showSlides() {
@@ -154,7 +120,7 @@ function showSlides() {
   }  
   
   slides[slideIndex - 1].style.display = 'block';  
-  setTimeout(showSlides, 2000); // Ndrysho slide çdo 2 sekonda
+  setTimeout(showSlides, 5000); // Ndrysho slide çdo 2 sekonda
 }
 
 // Thirr showSlides që të fillojë animacioni kur ngarkohet faqja
