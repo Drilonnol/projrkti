@@ -349,9 +349,11 @@
    background: transparent;
    backdrop-filter:blur(80px);
    border-style: ridge;
-   
+   flex-wrap: wrap;
    }
+
    .singin button{
+    flex-wrap: wrap;
     color: white;
        padding-top: 5px;
        padding-bottom: 5px;
@@ -365,7 +367,7 @@
    border-style:groove;
    }
    .singin input{
-      
+      flex-wrap: wrap;
        padding-top: 7px;
        padding-bottom: 7px;
        margin-left:-20% ;
