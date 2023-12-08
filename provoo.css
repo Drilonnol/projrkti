@@ -200,9 +200,10 @@
    
    }
    .largo{
+    z-index: 4;
     flex-wrap: wrap;
        position: absolute;
-       top: 45%;
+       top: 35%;
        left: 27%;
        background-color: white;
    padding-top: 1%;
@@ -563,6 +564,66 @@ border-radius: 20px 20px 20px 20px;
     margin-left: 19%;
   
 }
+@keyframes img13 {
+    0%{
+        transform: translateX(-700px);
+    }
+    30% {
+        transform: translateX(0);
+    }
+ 31%{
+    transform: translateY(0);
+   }
+   100%{
+    transform: translateY(-700px);
+   }
+    
+}
+@keyframes img14 {
+    0%{
+        transform: translateX(700px);
+    }
+    30% {
+        transform: translateX(0);
+    } 31%{
+        transform: translateY(0);
+       }
+       100%{
+        transform: translateY(-700px);
+       }
+  
+    
+}
+
+.img14 {
+    /* animation:img13 3s linear 0s 1 reverse none ;*/
+    animation-name: img14;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    animation-fill-mode:none;
+    flex-wrap: wrap;
+    z-index: -3;
+    position: absolute;
+    height: 450px;
+    margin-left: 19%;
+}
+.img13 img{
+    animation-name: img13;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    animation-fill-mode: none;
+    flex-wrap: wrap;
+  z-index: -3;
+   position: absolute; 
+    height: 450px;
+    margin-left: -29%;
+}
 .kerko input{
     height: 50px;
    font-size: x-large;
@@ -579,7 +640,7 @@ width: 150px;
 body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0 rgba(0, 0, 0, 0.4);
    flex-wrap: wrap;
 }
 
@@ -600,4 +661,17 @@ body {
 
 #coverImage:active{
 display: block;
+}
+.back-video {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    top: 7%;
+    z-index: 3;
+    
+}
+#video{
+    display: none;
 }
