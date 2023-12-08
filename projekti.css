@@ -57,16 +57,16 @@ margin-right: 20px;
      text-shadow: 2px 2px 4px #000000;
 }
 .c{
-font-size: xx-large;
-background-color: white;
-backdrop-filter:blur(20px);
-    margin-top: -40px;
-    text-align: center;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 0px 5px 5px 5px;
-    padding-bottom: 3%;
-    border: none;
+    
+    background-color: white;
+    backdrop-filter:blur(20px);
+        margin-top: -40px;
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        border-radius: 0px 5px 5px 5px;
+        padding-bottom: 3%;
+        border: none;
 }
 .b div:hover{
 color: black;

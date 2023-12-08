@@ -2,13 +2,14 @@
 document.getElementById('loginn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.add('active');
-   
+    
+    var registerContainer = document.getElementById('registerContainer');
+    registerContainer.classList.remove('active');
 });
-
 document.getElementById('cancelBtn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.remove('active');
-
+  
 });
 
 
@@ -97,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('Singinn').addEventListener('click', function () {
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.add('active');
+    var loginFormContainer = document.getElementById('loginFormContainer');
+    loginFormContainer.classList.remove('active');
 
 });
 document.getElementById('cancelBtnSingin').addEventListener('click',function(){
@@ -116,7 +119,7 @@ function showSlides() {
         slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change slide every 2 seconds
+    setTimeout(showSlides, 6000); // Change slide every 2 seconds
 }
 
 document.addEventListener("DOMContentLoaded", function () {
