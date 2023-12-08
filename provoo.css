@@ -5,13 +5,14 @@
    
    
    .a{
-       background-color: #0E1397;
+       background-color:black;
       display:flex ;
       font-size: large;
       flex-wrap: wrap;
       margin-right: 0;
    
    }
+   
    
    #a1{
    margin-right: 20px;
@@ -29,19 +30,19 @@
                }
            #a4 button{
             margin-right: 10px;
-            background-color: #0E1397;
+            background-color: #000000;
             padding: 16px 20px 16px 20px;
             color: white;
             border: none;
-
+           
                }
                #a6 button{
                 margin-right: 10px;
-                background-color: #0E1397;
+                background-color:black;
                 padding: 16px 20px 16px 20px;
                 color: white;
-border: none;
-                
+             border: none;
+           
                }
                #a7{
                 margin-right: 20px;
@@ -59,6 +60,7 @@ border: none;
        border-radius: 20px 20px 0% 0%;
       text-align: center;
        color: brown;
+       border: none;
    
        
    }
@@ -69,7 +71,8 @@ border: none;
         text-shadow: 2px 2px 4px #000000;
    }
    .c{
-   font-size: xx-large;
+    
+  
    background-color: white;
    backdrop-filter:blur(20px);
        margin-top: -40px;
@@ -101,6 +104,7 @@ border: none;
        display: flex;
        align-items: center;
        justify-content: space-between;
+     
        
    }
    
@@ -116,6 +120,7 @@ border: none;
        display: flex; 
        align-items: center;
        justify-content: space-between;
+      
    }
    #b3{
        background: transparent;
@@ -152,7 +157,7 @@ border: none;
    display: flex;
    justify-content: space-around;
    align-items: center;
-   margin-top: 2%;
+   margin-top: 4%;
    margin-bottom: 5%;
    flex-wrap: wrap;
   
@@ -196,10 +201,10 @@ border: none;
    .largo{
        position: absolute;
        top: 45%;
-       left: 40%;
+       left: 27%;
        background-color: white;
    padding-top: 1%;
-   padding-left: 3%;
+   padding-left: 30%;
    padding-right: 3%;
    padding-bottom: 4%;
    border-radius: 10px 10px 10px 10px;
@@ -224,13 +229,14 @@ border: none;
      margin-left: 5%;  
       }
    .largo input{
-       padding-top: 5px;
-       padding-bottom: 5px;
+       padding-top: 10px;
+       padding-bottom: 10px;
        margin-left: -10%;
    padding-right: 40%;
        border-radius: 10px 10px 10px 10px;
        border: ridge;
-       background: transparent;
+       border: none;
+       background: lightslategray;
    backdrop-filter:blur(20px);
    
    }
@@ -324,51 +330,55 @@ border: none;
        display: flex;
    }
    .singin{
-   
+   color: white;
        position: absolute;
-       top: 45%;
-       left: 40%;
+       top: 30%;
+       left: 35%;
+       
        background-color: white;
-   padding-top: 1%;
-   padding-left: 5%;
-   padding-right: 6%;
-   padding-bottom: 4%;
+   padding-top: 5%;
+   padding-left: 10%;
+   padding-right: 10%;
+   padding-bottom: 5%;
    border-radius: 10px 10px 10px 10px;
    text-align: start;
-   background-color:aliceblue;
-   backdrop-filter:blur(20px);
+   background: transparent;
+   backdrop-filter:blur(80px);
    border-style: ridge;
    
    }
    .singin button{
+    color: white;
        padding-top: 5px;
        padding-bottom: 5px;
-      background-color: lightblue;
+      background-color: black;
         padding-right:37%;
-        border-radius: 20px 20px 20px 20px;
+        display:  flex;
          padding-left: 37%;
-         backdrop-filter:blur(20px);
+         backdrop-filter:blur(100px);
          margin-top: 8%;
-   
+         border-radius: 20% 20% 20% 20%;
+   border-style:groove;
    }
    .singin input{
       
-       padding-top: 5px;
-       padding-bottom: 5px;
-       margin-left: -20%;
-       padding-right: 50%;
-       border-radius: 10% 10% 10% 10%;
-   
-       background: transparent;
+       padding-top: 7px;
+       padding-bottom: 7px;
+       margin-left:-20% ;
+       border: none;
+       width: 140%;
+       border-radius: 10px 10px 10px 10px;
+       background-color: lightslategray ;
    backdrop-filter:blur(20px);
    }.singin h2{
    margin-bottom: 20%;
-   margin-left: -10%;
+   margin-left: -9%;
    margin-right: -10%;
-   background-color: lightslategray;
-   padding: 3% 15% 3% 25%;
+   
+   color: black;
+   padding: 1% 10% 3% 25%;
    border-radius: 10px 10px 10px 10px;
-   border: ridge;
+  margin-top: -35%;
    
    }
    #singinBtn{
@@ -383,18 +393,21 @@ border: none;
    #registerContainer.active {
        display: block;
    }
+   
    .b button{
    padding-top: 10px;
    padding-bottom: 10px;
    padding-left: 5px;
    padding-right: 5px;
    margin-left: 1%;
-   background: transparent;
+ background: transparent;
    border-radius: 10px 10px 0px 0px;
+   backdrop-filter:blur(40px);
+   border: none;
    }
    .b button:hover{
        background-color: white;
-      
+       
    }
 
    .container{
@@ -519,14 +532,66 @@ border: none;
     
 }
 .shtyrjepo{
-    margin-top: 14%;
+    margin-top: 16%;
+    margin-bottom: 2%;
 }
 .veeq{
-
-    background-color:#711c90;
+    margin-top: -8%;
+   background: transparent;
+   backdrop-filter:blur(40px);
     margin-right: 70%;
     margin-left: 10%;
     padding: 1%;
     border:black ridge none;
     border-radius: 50px 50px 50px 50px;
+}
+
+.img12 img{
+    position: absolute;
+    z-index: 5;
+    height: 300px;
+    margin-left: -60%;
+    top: 150%;
+width: 350px;
+border-radius: 20px 20px 20px 20px;
+
+}
+#img21{
+    display: none;
+    
+   }
+   #img21:active{
+    display: block;
+   }
+   
+   .img13 img{
+  z-index: -3;
+   position: absolute; 
+    height: 450px;
+    margin-left: -29%;
+   
+}
+.img14 img{
+    z-index: -3;
+    position: absolute;
+    height: 450px;
+    margin-left: 19%;
+  
+}
+.kerko input{
+     height: 50px;
+    font-size: x-large;
+    border-radius: 0px 0px ;
+}
+#seleksioni1{
+   
+    height: 50px;
+    font-size: x-large;
+    
+}
+#seleksioni2{
+  
+    height: 50px;
+    font-size: x-large;
+    
 }

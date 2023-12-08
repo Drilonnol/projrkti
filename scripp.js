@@ -2,13 +2,14 @@
 document.getElementById('loginn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.add('active');
-   
+    
+    var registerContainer = document.getElementById('registerContainer');
+    registerContainer.classList.remove('active');
 });
-
 document.getElementById('cancelBtn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.remove('active');
-
+  
 });
 
 
@@ -97,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('Singinn').addEventListener('click', function () {
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.add('active');
+    var loginFormContainer = document.getElementById('loginFormContainer');
+    loginFormContainer.classList.remove('active');
 
 });
 document.getElementById('cancelBtnSingin').addEventListener('click',function(){
