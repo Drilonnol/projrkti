@@ -381,3 +381,7 @@ border-radius: 10px 10px 0px 0px;
     background-color: white;
     border:  none;
 }
+.background-color-blue {
+    background-color: #3498db; /* Ngjyra e këndës */
+    color: #fff; /* Ngjyra e tekstit */
+}

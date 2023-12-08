@@ -2,9 +2,14 @@
 document.getElementById('loginn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.add('active');
-    
+    var coverImage = document.getElementById('coverImage');
+    coverImage.style.display = 'none'; 
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.remove('active');
+    var coverImage = document.getElementById('coverImage');
+   coverImage.style.display = 'none';
+    document.body.style.overflow ='';
+  
 });
 document.getElementById('cancelBtn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
@@ -98,13 +103,25 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById('Singinn').addEventListener('click', function () {
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.add('active');
+
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.remove('active');
 
+    var coverImage = document.getElementById('coverImage');
+    coverImage.style.display = 'block';
+
+    if(coverImage.style.display === 'block'){
+        document.body.style.overflow ='hidden';
+    }
 });
 document.getElementById('cancelBtnSingin').addEventListener('click',function(){
 var registerContainer = document.getElementById('registerContainer');
 registerContainer.classList.remove('active');
+
+var coverImage = document.getElementById('coverImage');
+coverImage.style.display = 'none';
+
+document.body.style.overflow ='';
 });
 
 let slideIndex = 0;
