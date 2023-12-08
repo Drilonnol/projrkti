@@ -7,7 +7,7 @@
     <style>
         .tablink {
         background-color: #555;
-        color: white;
+        color: black;
         float: left;
         border: none;
         outline: none;
@@ -26,7 +26,7 @@
         display: flex;
         margin-bottom: 2px;
         margin-top: 2px;
-        color: black;
+        color: #f4f4f4;
         height: 100%;
         }
         .tabcontent img{
@@ -76,10 +76,54 @@
             color: #555;
         }
        
+
+        #news{
+            color: black;
+        }
+        .lajmet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 20px;
+        background-color: #f0f0f0;
+        }
+
+        .lajmi {
+            flex: 0 0 calc(45% - 20px);
+            margin: 10px;
+        }
+
+        .lajmi img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .lajmi h3 {
+            margin: 10px 0;
+        }
+
+        .lajmi p {
+            color: #555;
+        }
+
+        .lajmi a {
+            display: block;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .lajmi a:hover {
+            text-decoration: underline;
+        }
+
     </style>
     <body >
         <button class="tablink" onclick="openPage('Hotels')" id="defaultOpen">Hotels</button>
-        <button class="tablink" onclick="openPage('News')" id="defaultOpen">Biletat</button>
+        <button class="tablink" onclick="openPage('News')" id="defaultOpen">News</button>
         <button class="tablink" onclick="openPage('Contact')"id="defaultOpen">Contact</button>
         <button class="tablink" onclick="openPage('About')"id="defaultOpen">About</button>
 
@@ -137,9 +181,37 @@
                     </div>
                 </div>
            
+            </div>
           </div>
-          <div id="Hotels" class="tabcontent">
-            
+          <div id="News" class="tabcontent">
+            <section class="lajmet">
+                <article class="lajmi">
+                    <img src="lajmi2.png" alt="Lajmi 1">
+                    <h3>Wizz Air Rrit Fluturimet nëpër Europë</h3>
+                    <p>Data: 08/12/2023</p>
+                    <p>Wizz Air, një ndër linjat ajrore më të njohura në Europë, ka njoftuar rritjen e numrit të fluturimeve...</p>
+                    <a href="#">Lexo më shumë</a>
+                </article>
+                <article class="lajmi">
+                    <img src="lajmi3.png" alt="Lajmi 2">
+                    <h3>Oferta Speciale për Bileta të Lira</h3>
+                    <p>Data: 07/12/2023</p>
+                    <p>Wizz Air prezanton ofertën e saj të re me bileta të lira për disa destinacione të përzgjedhura në Europë...</p>
+                    <a href="#">Lexo më shumë</a>
+                </article>
+                <article class="lajmi">
+                    <img src="lajmi4.png" alt="Lajmi 2">
+                    <h3>Oferta Speciale për Bileta të Lira</h3>
+                    <p>Data: 07/12/2023</p>
+                    <p>"Wizz Air Njofton Fluturimet Drejt tre Destinacioneve të Reja në Europë"
+                        Data: 10/12/2023
+                        Wizz Air, një ndër kompanitë më të njohura të industrisë së transportit ajror, ka shpallur sot zyrtarisht zgjerimin 
+                        e rrjetit të saj të fluturimeve me shpalljen e tre destinacioneve të reja tërheqëse në Europë.</p>
+                    <a href="#">Lexo më shumë</a>
+                </article>
+                
+            </section>
+
           </div>
           
           <div id="Cars" class="tabcontent">

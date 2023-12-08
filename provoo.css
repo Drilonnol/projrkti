@@ -466,8 +466,22 @@
 
 
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
+.foto-container {
+    display: flex;
+}
 
+.foto-container img {
+    max-width: 30%;
+    height: auto;
+    margin: 20px;
+}
 
 
 
