@@ -20,8 +20,6 @@
         .tablink:hover {
         background-color: #777;
         }
-
-        /* Style the tab content (and add height:100% for full page content) */
         .tabcontent {
         display: flex;
         margin-bottom: 2px;
@@ -33,14 +31,12 @@
             display: flex;
             flex-direction: row;
         }
-       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
-
         .hotel-container {
             display: flex;
             justify-content: space-around;
@@ -81,12 +77,12 @@
             color: black;
         }
         .lajmet {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: flex-start;
-        padding: 20px;
-        background-color: #f0f0f0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #f0f0f0;
         }
 
         .lajmi {
@@ -119,12 +115,73 @@
         .lajmi a:hover {
             text-decoration: underline;
         }
+        .titulli{
+            color: #555;
+        
+            font-size: 2.2em;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+        }
+        #fluturimet {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
 
-    </style>
+        .fluturim {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 4%;
+            margin: 1%;
+            max-width: 800px;
+        }
+
+        .fluturim h2 {
+            color: #333;
+        }
+
+        .fluturim p {
+            margin: 0.5em 0;
+            color: #666;
+        }
+        .shkrimi{
+            border-radius: 1px;
+            font-size: 20%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #about {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #about h3 {
+            color: black;
+        }
+
+        #about p {
+            color:black;
+            font-size: medium;
+        }
+        fieldset{
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+        fieldset img{
+            width: 100%;
+            height: 100%;
+        }
+        fieldset p{
+            font-size: 1.2em;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+            </style>
     <body >
         <button class="tablink" onclick="openPage('Hotels')" id="defaultOpen">Hotels</button>
         <button class="tablink" onclick="openPage('News')" id="defaultOpen">News</button>
-        <button class="tablink" onclick="openPage('Contact')"id="defaultOpen">Contact</button>
+        <button class="tablink" onclick="openPage('fluturimet')"id="defaultOpen">Flight</button>
         <button class="tablink" onclick="openPage('About')"id="defaultOpen">About</button>
 
         <div id="Hotels" class="tabcontent">
@@ -214,14 +271,73 @@
 
           </div>
           
-          <div id="Cars" class="tabcontent">
-            <h3>Contact</h3>
-            <p>Get in touch, or swing by for a cup of coffee.</p>
+          <div id="fluturimet" class="tabcontent">
+            <p class="titulli">FLUTUEIMET JAVORE</p>
+            <section id="fluturimet">
+                <article class="fluturim">
+                    <h2>Fluturim per New York</h2>
+                    <p>Destinacioni:Stamboll ✈︎ New York</p>
+                    <p>Data: 10-02-2024</p>
+                </article>
+                <article class="fluturim">
+                    <h2>Fluturim per Paris</h2>
+                    <p>Destinacioni:Tirana ✈︎ Paris</p>
+                    <p>Data: 15-02-2024</p>
+                </article>
+                <article class="fluturim">
+                    <h2>Fluturim per Germany</h2>
+                    <p>Destinacioni:Prishtin ✈︎ Berlin</p>
+                    <p>Data: 09-03-2024</p>
+                </article>
+                <article class="fluturim">
+                    <h2>Fluturim per Switzerland</h2>
+                    <p>Destinacioni:Skoje ✈︎ Zurich</p>
+                    <p>Data: 25-01-2024</p>
+                </article>
+                <article class="fluturim">
+                    <h2>Fluturim per Itay</h2>
+                    <p>Destinacioni:Budapest ✈︎ Roma</p>
+                    <p>Data: 12-02-2024</p>
+                </article>
+                <article class="fluturim">
+                    <h2>Fluturim per Turkiye</h2>
+                    <p>Destinacioni:Prishtin ✈︎ Ankara</p>
+                    <p>Data: 15-05-2024</p>
+                </article>
+                <article class="fluturim">
+                    <h2>Fluturim per Germany</h2>
+                    <p>Destinacioni:Skopje ✈︎ Baden-Baden</p>
+                    <p>Data: 14-01-2024</p>
+                </article>
+                <article class="fluturim">
+                    <h2>Fluturim per France</h2>
+                    <p>Destinacioni: Frankfurt ✈︎ Strasbourg</p>
+                    <p>Data: 19-04-2024</p>
+                </article>
+            </section>
           </div>
           
           <div id="About" class="tabcontent">
-            <h3>About</h3>
-            <p>Who we are and what we do.</p>
+            <h3>INFO RRETH WIZZ AIR</h3>
+            <fieldset>
+               <p> Wizz Air është një kompani ajrore liderë e specializuar në transportin ajror në Europë Qendrore dhe Lindore. 
+                Me qendër operacionale në Budapest, Hungari, Wizz Air ofron një rrjet të gjerë të fluturimeve me 
+                destinacione të ndryshme në mbarë Europën, duke siguruar mundësinë për udhëtime të këndshme dhe ekonomike.
+                Nisur nga viti 2003, Wizz Air ka shërbyer me sukses një bazë të rritur të klientëve duke ofruar 
+                çmime të arsyeshme dhe shërbime cilësore. 
+                <br>
+                <br>
+                Flota e avionëve të saj, përbërë kryesisht nga avionë të serisë Airbus A320, është një nga flotat më të rinj dhe të modernizuar në botë.
+                Kompania ka një angazhim të vazhdueshëm për të përmirësuar eksperiencën e udhëtimit, 
+                duke ofruar shërbime të përshtatshme për pasagjerët dhe duke përdorur teknologjinë e fundit 
+                për të bërë proceset e udhëtimit më të lehta dhe efikase.
+            </p>
+                <p>
+                <img src="Stafi.png" alt="Stafi">
+                </p>
+            </fieldset>
+        
+             
           </div>
           
         
@@ -240,11 +356,9 @@
             elmnt.style.backgroundColor = color;
             }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-    </script>
-      
-    </body>
+        document.getElementById("defaultOpen").click();
+             </script>
+        
+        </body>
 
 </html>
