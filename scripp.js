@@ -7,6 +7,10 @@ document.getElementById('loginn').addEventListener('click', function () {
     var coverImage = document.getElementById('coverImage');
     coverImage.style.display = 'none'; 
 
+    var coverImag = document.getElementById('coverImag');
+    coverImag.style.display = 'block'; 
+    document.body.style.overflow = 'hidden';
+
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.remove('active');
 
@@ -14,8 +18,7 @@ document.getElementById('loginn').addEventListener('click', function () {
    coverImage.style.display = 'none';
     document.body.style.overflow ='';
 
-    var video=document.getElementById('video');
-    video.style.display ='block';
+
 
     if(video.style.display === 'block'){
         document.body.style.overflow ='hidden';
@@ -25,9 +28,9 @@ document.getElementById('cancelBtn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.remove('active');
 
-    var video=document.getElementById('video');
-    video.style.display ='none';
-    document.body.style.overflow='';
+    var coverImage = document.getElementById('coverImag');
+    coverImage.style.display = 'none'; 
+    document.body.style.overflow = '';
 
 });
 
@@ -116,11 +119,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById('Singinn').addEventListener('click', function () {
 
+     
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.add('active');
 
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.remove('active');
+
+    var coverImag = document.getElementById('coverImag');
+    coverImag.style.display = 'none'; 
+    document.body.style.overflow = '';
 
     var coverImage = document.getElementById('coverImage');
     coverImage.style.display = 'block';
@@ -129,9 +137,11 @@ document.getElementById('Singinn').addEventListener('click', function () {
         document.body.style.overflow ='hidden';
     }
 
-    var video=document.getElementById('video');
+    var video=document.getElementById('video1');
     video.style.display ='none';
     document.style.overflow='';
+
+    
 });
 document.getElementById('cancelBtnSingin').addEventListener('click',function(){
 var registerContainer = document.getElementById('registerContainer');
