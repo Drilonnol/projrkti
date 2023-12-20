@@ -9,7 +9,7 @@ document.getElementById('loginn').addEventListener('click', function () {
 
     var coverImag = document.getElementById('coverImag');
     coverImag.style.display = 'block'; 
-    document.body.style.overflow = 'hidden';
+
 
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.remove('active');
@@ -18,9 +18,7 @@ document.getElementById('loginn').addEventListener('click', function () {
    coverImage.style.display = 'none';
     document.body.style.overflow ='';
 
-
-
-    if(video.style.display === 'block'){
+    if(coverImag.style.display === 'block'){
         document.body.style.overflow ='hidden';
     }
 });

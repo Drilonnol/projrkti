@@ -204,7 +204,7 @@
    
    }
    .largo{
-  
+    animation: 1.5s 1 anime;
     z-index: 4;
     background-image: url(t09952168_Picture_2_Travel.jpg);
     flex-wrap: wrap;
@@ -555,6 +555,8 @@
     margin-left: 19%;
   
 }
+
+
 @keyframes img13 {
     0%{
         transform: translateX(-700px);
@@ -635,6 +637,7 @@ body {
    flex-wrap: wrap;
 }
 .style21{
+    animation: 1.5s 1 anim;
     position: fixed;
     top: 0%;
     left: 0;
@@ -653,6 +656,7 @@ body {
 display: block;
 }
 .style12 {
+   
     position: fixed;
     top: 0%;
     left: 0;
@@ -662,6 +666,8 @@ display: block;
     background: url('lajmi4.png') center/cover no-repeat; 
     overflow: hidden;
 }
+
+
 #coverImage{
     display: none;
     
@@ -671,16 +677,15 @@ display: block;
 display: block;
 }
 
-@media only screen and (max-width: 600px) {
-    /* Stilizime për ekranet e vogla këtu */
+
+@keyframes anim{
+    0%{transform: rotateY(90deg);}
+    100%{transform: rotateY(0);}
 }
 
-/* Stilizime për ekrane të mesme (tablet) */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    /* Stilizime për tablet këtu */
+@keyframes anime{
+    0%{transform: rotateX(90deg);}
+    100%{transform: rotateX(0);}
 }
 
-/* Stilizime për ekrane të mëdha (desktop) */
-@media only screen and (min-width: 1025px) {
-    /* Stilizime për desktop këtu */
-}
+
