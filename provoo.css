@@ -2,8 +2,14 @@
     margin: 0%;   
  
    }
-   
-   
+  /* #posfixe{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    flex-wrap: wrap;
+   }*/
    .a {
         z-index: 10;
     background-color:black ;
@@ -13,9 +19,6 @@
       margin-right: 0;
    
    }
-    
-   
-   
    #a1{
    margin-right: 20px;
    z-index: 5;
@@ -52,6 +55,7 @@
                }
              
    .b{
+
     flex-wrap: wrap;
        background: transparent;
        display: flex;
@@ -140,7 +144,7 @@
    }
    
    .g{
-   
+  
        width: 100%;
        height:100%;
        flex-wrap: wrap;
@@ -204,23 +208,38 @@
    
    }
    .largo{
-    animation: 1.5s 1 anime;
+    animation: 3s 1 anime;
     z-index: 4;
-    background-image: url(t09952168_Picture_2_Travel.jpg);
+   background: transparent;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+   
     flex-wrap: wrap;
        position: absolute;
        top: 35%;
        left: 39%;
-       background-color: white;
    padding-top: 1%;
    padding-left: 4%;
    padding-right: 3%;
    padding-bottom: 4%;
    border-radius: 10px 10px 10px 10px;
    text-align: start;
-   backdrop-filter:blur(20px);
-   border-style: ridge;
+   backdrop-filter:blur(5px);
+  border-style:outset;
+  border-color: #000000;
+   color:white;
    }
+   .imgss{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    border-radius: inherit; /* Për të përshtatur me këndët e div-it më të madh */
+    z-index: -1;
+}
    .largo img{
     flex-wrap: wrap;
        height: 20px;
@@ -463,12 +482,14 @@
 .slideshow-container img{
    
     right: 0;
-   width: 100%;
+ max-width: 100%;
+ margin: auto;
    z-index: -3;
    position: absolute;
    margin-top: -10%;
    flex-wrap: nowrap;
 }
+
 @keyframes fade {
     from {
         opacity: 0.4;
@@ -477,11 +498,6 @@
         opacity: 1;
     }
 }
-
-
-
-
-
 
 .container {
     display: flex;
@@ -499,22 +515,6 @@
     height: auto;
     margin: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #h21{
     background-color: white;
@@ -637,14 +637,14 @@ body {
    flex-wrap: wrap;
 }
 .style21{
-    animation: 1.5s 1 anim;
+    animation: 1s 1 anim;
     position: fixed;
     top: 0%;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 2; 
-    background: url('t09952168_Picture_2_Travel.jpg') center/cover no-repeat; 
+    background: url('de708690abbfed5a5ce2a7a6648909fc.jpg') center/cover no-repeat; 
     overflow: hidden;
 }
 #coverImag{
@@ -689,3 +689,20 @@ display: block;
 }
 
 
+.none{
+    display: none;
+}
+
+
+
+/*interesant*/
+.pozita {
+position: absolute;
+    top: 32.1%;
+    left: 0%;
+     right: 0%;
+}
+/*-------------------*/
+#hapsir{
+display: none;
+}

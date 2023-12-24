@@ -1,4 +1,9 @@
 
+
+// var login = document.getElementById('loginn');
+// login.addEventListener('click ',function(){ balabalabal });
+
+
 document.getElementById('loginn').addEventListener('click', function () {
 
     var loginFormContainer = document.getElementById('loginFormContainer');
@@ -135,11 +140,7 @@ document.getElementById('Singinn').addEventListener('click', function () {
         document.body.style.overflow ='hidden';
     }
 
-    var video=document.getElementById('video1');
-    video.style.display ='none';
-    document.style.overflow='';
 
-    
 });
 document.getElementById('cancelBtnSingin').addEventListener('click',function(){
 var registerContainer = document.getElementById('registerContainer');
@@ -169,3 +170,44 @@ function showSlides() {
 document.addEventListener("DOMContentLoaded", function () {
     showSlides();
 });
+
+
+
+
+
+// tre butonat flight hotel end car 
+var button1 = document.getElementById('button1');
+var button2 = document.getElementById('button2');
+var button3 = document.getElementById('button3');
+var popup1 = document.getElementById('popup1');
+var popup2 = document.getElementById('popup2');
+var popup3 = document.getElementById('popup3');
+
+
+button1.addEventListener('click', function() {
+    shfaqPopup(popup1);
+});
+
+button2.addEventListener('click', function() {
+    shfaqPopup(popup2);
+});
+
+button3.addEventListener('click', function() {
+    shfaqPopup(popup3);
+});
+
+
+function shfaqPopup(popupToShow) {
+    var popups = document.querySelectorAll('.divi');
+    for (var i = 0; i < popups.length; i++) {
+        popups[i].style.display = 'none';
+    }
+    popupToShow.style.display = 'block';
+    var hap = document.getElementById('hapsir');
+
+    if (popupToShow === document.getElementById('popup1')) {
+        hap.style.display = 'none';
+    } else {
+        hap.style.display = 'block';
+    }
+}
