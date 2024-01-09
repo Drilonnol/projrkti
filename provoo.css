@@ -697,10 +697,12 @@ display: block;
 
 /*interesant*/
 .pozita {
-position: absolute;
-    top: 32.1%;
+position:sticky;
+    top: -20%;
     left: 0%;
      right: 0%;
+     margin-top: -32.7%;
+     margin-bottom: 21.25%;
 }
 /*-------------------*/
 #hapsir{
