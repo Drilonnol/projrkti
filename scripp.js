@@ -26,14 +26,22 @@ document.getElementById('loginn').addEventListener('click', function () {
     if(coverImag.style.display === 'block'){
         document.body.style.overflow ='hidden';
     }
+
+    
+    var registerContainer = document.getElementById('registerContainer');
+    registerContainer.classList.remove('active');
+
 });
 document.getElementById('cancelBtn').addEventListener('click', function () {
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.remove('active');
 
+
     var coverImage = document.getElementById('coverImag');
     coverImage.style.display = 'none'; 
     document.body.style.overflow = '';
+
+
 
 });
 
@@ -125,6 +133,8 @@ document.getElementById('Singinn').addEventListener('click', function () {
      
     var registerContainer = document.getElementById('registerContainer');
     registerContainer.classList.add('active');
+    var loginFormContainer = document.getElementById('loginFormContainer');
+    loginFormContainer.classList.remove('active');
 
     var loginFormContainer = document.getElementById('loginFormContainer');
     loginFormContainer.classList.remove('active');

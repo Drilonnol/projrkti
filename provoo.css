@@ -2,6 +2,7 @@
     margin: 0%;   
  
    }
+
   /* #posfixe{
     position: fixed;
     top: 0;
@@ -13,12 +14,19 @@
    .a {
         z-index: 10;
     background-color:black ;
+   }
+   
+   
+   .a{
+       background-color:black;
       display:flex ;
       font-size: large;
       flex-wrap: wrap;
       margin-right: 0;
    
    }
+   
+   
    #a1{
    margin-right: 20px;
    z-index: 5;
@@ -36,7 +44,11 @@
                }
            #a4 button{
             margin-right: 10px;
+
             background: transparent;
+
+            background-color: #000000;
+
             padding: 16px 20px 16px 20px;
             color: white;
             border: none;
@@ -44,7 +56,11 @@
                }
                #a6 button{
                 margin-right: 10px;
+
               background: transparent;
+
+                background-color:black;
+
                 padding: 16px 20px 16px 20px;
                 color: white;
              border: none;
@@ -55,6 +71,9 @@
                }
              
    .b{
+
+
+
 
     flex-wrap: wrap;
        background: transparent;
@@ -217,10 +236,17 @@
    
     flex-wrap: wrap;
        position: absolute;
+
        top: 35%;
        left: 39%;
    padding-top: 1%;
    padding-left: 4%;
+
+       top: 45%;
+       left: 27%;
+       background-color: white;
+   padding-top: 1%;
+   padding-left: 30%;
    padding-right: 3%;
    padding-bottom: 4%;
    border-radius: 10px 10px 10px 10px;
@@ -256,17 +282,18 @@
    }.shtyje{ 
      margin-left: 5%;  
       }
-   .largo input{
+  
+    .largo input{
     flex-wrap: wrap;
-       padding-top: 10px;
-       padding-bottom: 10px;
-       margin-left: -10%;
-   padding-right: 40%;
-       border-radius: 10px 10px 10px 10px;
-       border: ridge;
-       border: none;
-       background: lightslategray;
-   backdrop-filter:blur(20px);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: -10%;
+    padding-right: 40%;
+    border-radius: 10px 10px 10px 10px;
+    border: ridge;
+    border: none;
+    background: lightslategray;
+    backdrop-filter:blur(20px);
    
    }
    .largo p{
@@ -275,7 +302,8 @@
    .d1s {
        display: flex;
       justify-content: space-around;
-   } .largo button{
+   } 
+   .largo button{
        flex-wrap: wrap;
        margin-top: 5%;
        padding-left: 28%;
@@ -360,13 +388,15 @@
        display: flex;
    }
    .singin{
-    
-    
+
    color: white;
        position: absolute;
        top: 30%;
        left: 35%;
        z-index: 2;
+
+       
+
        background-color: white;
    padding-top: 5%;
    padding-left: 10%;
@@ -381,6 +411,7 @@
    }
 
    .singin button{
+
     flex-wrap: wrap;
     color: white;
        padding-top: 5px;
@@ -395,7 +426,9 @@
    border-style:groove;
    }
    .singin input{
+
       flex-wrap: wrap;
+
        padding-top: 7px;
        padding-bottom: 7px;
        margin-left:-20% ;
@@ -404,7 +437,8 @@
        border-radius: 10px 10px 10px 10px;
        background-color: lightslategray ;
    backdrop-filter:blur(20px);
-   }.singin h2{
+   }
+   .singin h2{
    margin-bottom: 20%;
    margin-left: -9%;
    margin-right: -10%;
@@ -444,7 +478,67 @@
        
    }
 
+   .container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 30px;
+    margin: 15px 15px 15px 15px;
 
+}
+
+.container .card{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    background-color: #FFF;
+    margin: 30px 30px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 22px rgba(0,0,0,0,5);
+    transition: 0.3s ease-in-out;
+}
+.container .card:hover{
+    height: 100px;
+    background-color: #711c90;
+
+
+}
+.container .card .imgbox{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    margin-left: 30%;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0,5);
+}
+.container .card .imgbox img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+.container .card .content{
+    position: relative;
+    margin-top: -140px;
+    padding: 20px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+.container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -4px;
+    transition-delay: 0.3s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .flex{
     margin-top: 20%;
     background-color: #A7238B;
@@ -480,7 +574,6 @@
 }
 
 .slideshow-container img{
-   
     right: 0;
  max-width: 100%;
  margin: auto;
@@ -490,6 +583,8 @@
    flex-wrap: nowrap;
 }
 
+
+
 @keyframes fade {
     from {
         opacity: 0.4;
@@ -498,6 +593,7 @@
         opacity: 1;
     }
 }
+
 
 .container {
     display: flex;
