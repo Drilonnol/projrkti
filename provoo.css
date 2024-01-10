@@ -159,7 +159,7 @@
        color: aliceblue;
        align-items: center;
     margin-left: 55%;
-    margin-right: -10%;   
+    /*margin-right: -10%;   */
     flex-wrap: wrap;
    }
    .box1{
