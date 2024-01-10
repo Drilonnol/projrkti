@@ -150,7 +150,7 @@
        flex-wrap: wrap;
       padding-bottom:30%;
       background-size: cover;
-       background-position: center;
+    background-position: center;
     z-index: 10;
    }
    .am{
