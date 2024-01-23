@@ -78,8 +78,6 @@
         text-shadow: 2px 2px 4px #000000;
    }
    .c{
-    
-  
    background-color: white;
    backdrop-filter:blur(20px);
        margin-top: -40px;
@@ -90,6 +88,7 @@
        padding-bottom: 3%;
        border: none;
        flex-wrap: wrap;
+      
    }
    .b div:hover{
    color: black;
@@ -528,6 +527,7 @@
     margin-bottom: 2%;
 }
 .veeq{
+   
     flex-wrap: wrap;
     margin-top: -8%;
    background: transparent;
@@ -622,6 +622,8 @@
    font-size: x-large;
    border-radius: 0px 0px ;
 }
+
+
 #seleksioni1{
 height: 60px;
 width: 150px;
@@ -701,8 +703,11 @@ position: absolute;
     top: 32.1%;
     left: 0%;
      right: 0%;
+   
 }
 /*-------------------*/
 #hapsir{
 display: none;
+padding-top: 4%;
+padding-bottom: 4%;
 }

@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const PASSWORD = document.getElementById('pass');
         const EMAIL = document.getElementById('email');
 
+
+
         if (PASSWORD.value.length === 0) {
             alert("Ju lutem shtoni Fjalkalimin.");
             PASSWORD.focus();
@@ -63,7 +65,17 @@ document.addEventListener("DOMContentLoaded", function () {
             EMAIL.focus();
             return false;
         }
-        return true;
+        if(emailValid(EMAIL.value)){
+            var loginFormContainer = document.getElementById('loginFormContainer');
+            loginFormContainer.classList.remove('active');
+        
+            var coverImage = document.getElementById('coverImag');
+            coverImage.style.display = 'none'; 
+            document.body.style.overflow = '';
+
+            
+              
+        }
     };
 
     const emailValid = (email) => {
@@ -112,12 +124,16 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
         return true;
+
+        
+
     };
     const emailValid = (email) => {
         const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
         return emailRegex.test(email.toLowerCase());
     };
     singinBtnSubmit.addEventListener('click', singinValidate);
+    
 });
 
 document.getElementById('Singinn').addEventListener('click', function () {
@@ -211,3 +227,5 @@ function shfaqPopup(popupToShow) {
         hap.style.display = 'block';
     }
 }
+
+
