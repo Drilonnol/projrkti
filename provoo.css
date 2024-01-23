@@ -80,7 +80,7 @@
    .c{
    background-color: white;
    backdrop-filter:blur(20px);
-       margin-top: -40px;
+       /*margin-top: -20px;*/
        text-align: center;
        margin-left: 5%;
        margin-right: 5%;

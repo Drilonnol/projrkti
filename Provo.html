@@ -16,7 +16,7 @@
         <div id="a1"><img style="height: 50px; " src="wizzair.png" alt="Wizz Air" ></div>
         <div class="am">
         
-        <div id="a5">Home</div>
+        <div id="a5"> <a href="file:///C:/Users/HP/Desktop/GitHub/projrkti/Provo.html">Home</a></div>
         <div id="a2">Center</div>
         <div id="a7"><a href="file:///C:/Users/HP/Desktop/GitHub/projrkti/oferta.html"  target="_blank">Ofert</a></div>
         <div id="a3">New</div>
@@ -143,7 +143,8 @@
            <div> 
                <div class="kerko">
                    <b>
-                   <p><input type="radio" name="fluturimet" > Njedrejtimshe 
+                    <br>
+                <!--  <p><input type="radio" name="fluturimet" > Njedrejtimshe 
                        <input type="radio" name="fluturimet"> Dydrejtimshe</p>
                     </b>
                            <select id="seleksioni1" name="Origina">
@@ -170,6 +171,12 @@
                            </a> 
                      </div>
                     </div>
+                    -->
+                    <img src="vetura1.jpg" alt="vetura1" style="width: 220px;">
+                    <img src="vetura2.jpg" alt="vetura2" style="width: 220px;">
+                    <img src="vetura3.jpg" alt="vetura3"style="width: 220px;">
+                    <img src="vetura5.jpg" alt="vetura5" style="width: 220px;">
+                    <p>Ketu jane veturat te cilat mund t'i perzgjedhni per te marre me rent</p> 
                 </div>
              </div>
            </div>
@@ -273,18 +280,18 @@
         <div id="img14" class="img14">
             <img src="airplane-icon-image-gallery-1 (1)3.png" alt="">
         </div>
-        <form action="ing">
+        <form action="Lidhja.php" method="post">
             <h2>Singin Form</h2>
             <label><p>EMRI DHE MBIEMRI</p></label>
-            <input type="text" class="email" id="emrimbi">
+            <input type="text" class="email" id="emrimbi" name="emrimbiemri">
             <label><p>EMAIL</p></label>
-            <input type="text" class="email" id="emailr">
+            <input type="text" class="email" id="emailr" name="email">
         <label><p>PASSWORD</p></label>
-        <input type="password" class="pass" id="passr">
+        <input type="password" class="pass" id="passr" name="password">
           <label><p>CONFIRM PASSWORD</p></label>
-            <input type="password" class="pass" id="passr2">
+            <input type="password" class="pass" id="passr2" name="confirmimi">
             <div class="jojo">
-                <button type="button" id="singinBtn">SINGIN</button>
+                <button type="button" id="singinBtn" name="submit">SINGIN</button>
             </div>
             <button type="button" id="cancelBtnSingin">CANCEL</button>
 
