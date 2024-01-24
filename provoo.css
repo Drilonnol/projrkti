@@ -78,20 +78,18 @@
         text-shadow: 2px 2px 4px #000000;
    }
    .c{
-    
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25) ;
-    background-color: white;
-    backdrop-filter:blur(20px);
-        margin-top: -40px;
-        padding-bottom: 3%;
-        border: none;
-        flex-wrap: wrap;
-        margin-left: 5%;
-        padding-left: 2%;
-        margin-right: 7%;
-        border-radius: 0% 10px 10% 10%;
-       
-    }
+   background-color: white;
+   backdrop-filter:blur(20px);
+       /*margin-top: -20px;*/
+       text-align: center;
+       margin-left: 5%;
+       margin-right: 5%;
+       border-radius: 0px 5px 5px 5px;
+       padding-bottom: 3%;
+       border: none;
+       flex-wrap: wrap;
+      
+   }
    .b div:hover{
    color: black;
    background-color: white;
@@ -709,40 +707,7 @@ position: absolute;
 }
 /*-------------------*/
 #hapsir{
-
 display: none;
 padding-top: 4%;
 padding-bottom: 4%;
 }
-
-
-.makina img{
-    border-radius: 20% 10px 20% 10px;
-    box-shadow: 1px 1px 2px black, 0 0 25px rgb(14, 14, 15), 0 0 5px rgb(4, 4, 4);
-    width: 220px;
-    transition: all .0.7s ease-in ;
-  
-   transform: skew(-7deg);
-}
-
-.makina img:hover{
-    height: 100%;
-    width: 100%;
-    
-   transform: skew(0deg);
-}
-
-.makina div {
-   justify-content: space-between;
-   margin: 2%;
-   border: ridge;
-   border-radius: 20px 20px 5px 5px;
-   padding: 2% 1% 2% 1%;
-
-
-}
-.makina p{
-    text-align: center;
-  padding-bottom: 2%;
-}
-
