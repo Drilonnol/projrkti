@@ -1,7 +1,7 @@
 <?php
   class DatabaseConnection{
     
-    private $host = "localhostt";
+    private $host = "localhost";
     private $username = "roott";
     private $password = "";
     private $db = "web";
