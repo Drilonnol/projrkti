@@ -245,15 +245,15 @@
 
 
 <div id="registerContainer" class="tabcontent">
-   
+
     <div class="singin">
         <div id="img13" class="img13">
             <img src="airplane-icon-image-gallery-1 (1)2.png" alt="">
         </div>
         <div id="img14" class="img14">
             <img src="airplane-icon-image-gallery-1 (1)3.png" alt="">
-        </div>
-        <form action="Lidhja.php" method="post">
+        </div> 
+        <form class="" action="" method="post" autocomplete="off">
             <h2>Singin Form</h2>
             <label><p>EMRI DHE MBIEMRI</p></label>
             <input type="text" class="email" id="emrimbi" name="emrimbiemri">
@@ -264,9 +264,10 @@
           <label><p>CONFIRM PASSWORD</p></label>
             <input type="password" class="pass" id="passr2" name="confirmimi">
             <div class="jojo">
-                <button type="button" id="singinBtn" name="submit">SINGIN</button>
+            <button type="submit" id="singinBtn" name="submit">SINGIN</button>
             </div>
             <button type="button" id="cancelBtnSingin">CANCEL</button>
+            
 
         </form>
     </div>
@@ -275,3 +276,68 @@
 <script src="scripp.js"></script>
 </body>
 </html>
+
+       <?php
+          
+          require 'conection.php';
+          if(isset($_POST['submit'])){
+              $name=$_POST['emrimbiemri'];
+              $email=$_POST['email'];
+              $pass=$_POST['password'];
+              $confirmimi=$_POST['confirmimi'];
+           
+            
+      
+              $query="INSERT INTO tb_data1 values('','$name','$email','$pass','$confirmimi')";
+              mysqli_query($conn,$query);
+              echo"<script> alert('Suksese') </script>";
+          
+          
+            }
+          
+          
+          
+          
+          
+          
+          
+          
+          /*  include_once 'Pordoruesi.php';
+            include_once 'PordoruesiRepository.php';
+            if(isset($_POST['submit'])){
+                $emri =$_POST['emrimbiemri'];
+                $email =$_POST['email'];
+                $password=$_POST['password'];
+                $confirmimipassword=$_POST['confirmimi'];
+                
+            $pordoruesi = new Pordoruesi($emri,$email,$password, $confirmimipassword);
+            
+            $pordoruesiRepository= new  PordoruesiRepository();
+            $pordoruesiRepository->insertPordorues($pordoruesi);
+            header("location:Pordoruesit.php");
+           }
+          */ 
+
+
+
+          /* session_start();
+           include("db.php");
+           if($_SERVER['REQUEST_METHOD']== "POST"){
+            $emri=$_POST['emrimbiemri'];
+            $email=$_POST['email'];
+            $password=$_POST['password'];
+
+            if(!empty($email) && !empty($password)){
+
+                $query="INSERT INTO regjister(Emri,Email,pass) values ('$emri', '$email','$password')";
+
+                mysqli_query($conn,$$query);
+                echo"<script type='text/javascript'> alert('Suksese')</script>";
+            }
+            else{
+                echo"<script type='text/javascript'> alert('Gabim')</script>";
+            }
+
+           }
+*/
+        ?>

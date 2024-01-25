@@ -1,0 +1,40 @@
+.from {
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.from label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.from input[type="text"],
+.from input[type="number"],
+.from select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.from input[type="radio"],
+.from input[type="checkbox"] {
+    margin-bottom: 8px;
+}
+
+.from button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.from button:hover {
+    background-color: #45a049;
+}
