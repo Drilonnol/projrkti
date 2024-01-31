@@ -181,7 +181,36 @@
             font-size: 1.2em;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
         }
-            </style>
+        #R{
+          text-align: center;
+          color: black;
+        }
+        form {
+        max-width: 400px;
+        margin: 0 auto;
+        }
+
+        label {
+            color: black;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input,select {
+        width: 50%;
+        padding: 4px;
+        margin-bottom: 5px;
+        box-sizing: border-box;
+        }
+        button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+    </style>
     <body >
         <button class="tablink" onclick="openPage('Hotels')" id="defaultOpen">Hotels</button>
         <button class="tablink" onclick="openPage('News')" id="defaultOpen">News</button>
@@ -243,6 +272,51 @@
                 </div>
            
             </div>
+            <hr>
+            <div class="rezervimet">
+            <h3 id="R">Rezervoni Hotelin</h3>
+            <form action="" method="post">
+                <label for="emri">Emri:</label>
+                <input type="text" id="emri" name="emri" required><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                
+                <label for="telefoni">Telefoni:</label>
+                <input type="tel" id="telefoni" name="telefoni" required><br>
+                
+                <label for="datafillimit">Data e Fillimit:</label>
+                <input type="date" id="datafillimit" name="datafillimit" required><br>
+                
+                <label for="datambarimit">Data e Mbarimit:</label>
+                <input type="date" id="datambarimit" name="datambarimit" required><br>
+                
+                <select id="Hotelet" name="zgejdhHotelin" required><br>
+                    <option value="ZGJEDH HOTELIN">ZGJEDH HOTELIN</option>
+                    <option value="HOTEL BONITA Classic - DURRËS">HOTEL BONITA Classic - DURRËS</option>
+                    <option value="HOTEL AUSTRIA - VJENA">HOTEL AUSTRIA - VJENA</option>
+                    <option value="HOTEL DUBAI Classic - DUBAI">HOTEL DUBAI Classic - DUBAI</option>
+                    <option value="HOTEL ROME Classic - ITALY">HOTEL ROME Classic - ITALY</option>
+                    <option value="HOTEL GJERMANI Classic - FRANKFURT">HOTEL GJERMANI Classic - FRANKFURT</option>
+                </select>
+
+                <label for="tipi_dhomes">Tipi i dhomes:</label>
+                <select id="tipi_dhomes" name="tipi_dhomes" required><br>
+                    <option value="Vetem">Vetem</option>
+                    <option value="Per dy">Per dy</option>
+                    <option value="Familje">Familje</option>
+                </select>
+                <select id="Qmimi" name="Qmimi" required><br>
+                    <option value="50$ Nata">50$ Nata</option>
+                    <option value="100$ Nata">100$ Nata</option>
+                    <option value="200$ Nata">200$ Nata</option>
+                </select>
+                <button type="submit" name="kliko">Rezervo</button>
+                <br>
+                <hr>
+            </form>
+          </div>
+
           </div>
           <div id="News" class="tabcontent">
             <section class="lajmet">
@@ -274,7 +348,7 @@
             </section>
 
           </div>
-          
+
           <div id="fluturimet" class="tabcontent">
             <p class="titulli">FLUTUEIMET JAVORE</p>
             <section id="fluturimet">
@@ -363,6 +437,26 @@
         document.getElementById("defaultOpen").click();
              </script>
         
+        <?php
+             require 'conectionnew.php';
+
+            if(isset($_POST['kliko'])){
+                $emri = $_POST['emri'];
+                $email = $_POST['email'];
+                $telefoni = $_POST['telefoni'];
+                $datafillimit = $_POST['datafillimit'];
+                $datambarimit = $_POST['datambarimit'];
+                $tipi_dhomes = $_POST['tipi_dhomes'];
+                $zgjedhehotelin=$_POST['zgejdhHotelin'];
+                $qmimi=$_POST['Qmimi'];
+
+                $query = "INSERT INTO Hotelet VALUES('','$emri','$email','$telefoni','$datafillimit','$datambarimit','$tipi_dhomes','$zgjedhehotelin','$qmimi')";
+                mysqli_query($conn, $query);
+                echo "<script> alert('Suksese') </script>";
+
+            }
+        
+        ?>
         </body>
 
 </html>
