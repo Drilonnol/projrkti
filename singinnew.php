@@ -3,7 +3,10 @@
     if(isset($_POST['submit'])){
         $name=$_POST['name'];
         $age=$_POST['age'];
+        $email=$_POST['email'];
+        $password=$_POST['pass'];
         $county=$_POST['country'];
+        
         $gender=$_POST['gender'];
         $languages=$_POST['languages'];
         $language="";
@@ -35,6 +38,10 @@
             <input type="text" name="name" class="from">
             <label for="">Mosha</label><br>
             <input type="number" name="age" required value="">
+            <label for="">Email</label><br>
+            <input type="text" name="email" class="from">
+            <label for="">Password</label><br>
+            <input type="password" name="pass" class="from">
             <label for="">Shteti</label><br>
             <select name="country" id="">
             <option value="" select hidden>shteti</option>

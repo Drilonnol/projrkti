@@ -65,34 +65,36 @@
  <div id="popup1" class="divi">
  <div class="c" >
     <div> 
+        <form class="" action="" method="post" autocomplete="off">
         <div class="kerko">
             <b>
-            <p><input type="radio" name="fluturimet" > Njedrejtimshe 
-                <input type="radio" name="fluturimet"> Dydrejtimshe</p>
+            <p><input type="radio" name="fluturimet" value="Njedrejtimshe"> Njedrejtimshe 
+                <input type="radio" name="fluturimet" value="Dydrejtimshe"> Dydrejtimshe</p>
              </b>
                     <select id="seleksioni1" name="Origina">
-                        <option value="opsion1">Prishtina </option>
-                        <option value="opsion2">Tirana </option>
-                        <option value="opsion3">Stambolli</option>
-                        <option value="opsion4">Bade baden</option>
-                        <option value="opsion5">Munchen</option>
-                        <option value="opsion6">Gjakove</option>
+                        <option value="Prishtina">Prishtina </option>
+                        <option value="Tirana">Tirana </option>
+                        <option value="Stambolli">Stambolli</option>
+                        <option value="Bade baden">Bade baden</option>
+                        <option value="Munchen">Munchen</option>
+                        <option value="Gjakove">Gjakove</option>
                     </select>
                    <select id="seleksioni2" name="seleksioni2">
                         <option value="opsionA"></option>
-                        <option value="opsionA">Prishtina </option>
-                        <option value="opsionB">Tirana </option>
-                        <option value="opsionC">Stambolli </option>
-                        <option value="opsion4">Bade baden</option>
-                        <option value="opsion5">Zurich</option>
-                        <option value="opsion6">Gjakove</option>
+                        <option value="Prishtina">Prishtina </option>
+                        <option value="Tirana">Tirana </option>
+                        <option value="Stambolli">Stambolli </option>
+                        <option value="Bade baden">Bade baden</option>
+                        <option value="Zurich">Zurich</option>
+                        <option value="Gjakove">Gjakove</option>
                     </select>
                     <a class="info">
-                        <input type="date">
-                        <input type="number">
-                        <input type="submit" value="Search">
+                        <input type="date" name="data">
+                        <input type="number" name="pasagjeret">
+                        <input type="submit" value="Search" name="submit">
                     </a> 
               </div>
+              </form>
  
              </div>
          </div>
@@ -103,10 +105,11 @@
   <div id="popup2" class="divi none pozita">
     <div class="c" >
        <div> 
+       <form class="" action="" method="post" autocomplete="off">
            <div class="kerko">
                <b>
-               <p><input type="radio" name="fluturimet" > Njedrejtimshe 
-                   <input type="radio" name="fluturimet"> Dydrejtimshe</p>
+               <p><input type="radio" name="fluturimet" value="Njedrejtimshe" > Njedrejtimshe 
+                   <input type="radio" name="fluturimet" value="Dydrejtimshe"> Dydrejtimshe</p>
                 </b>
                        <select id="seleksioni1" name="Origina">
                            <option value="opsion1">Prishtina </option>
@@ -131,6 +134,7 @@
                            <input type="submit" value="Search">
                        </a> 
                  </div>
+                 </form>
     
                 </div>
             </div>
@@ -276,6 +280,21 @@
 <script src="scripp.js"></script>
 </body>
 </html>
+        <?php
+            require 'conectionnew.php';
+        
+            if(isset($_POST['submit'])){
+                $drejtimi = $_POST['fluturimet'];
+                $origjina = $_POST['Origina'];
+                $destinacioni = $_POST['seleksioni2'];
+                $data = $_POST['data'];
+                $pasagjeret = $_POST['pasagjeret'];
+        
+                $query = "INSERT INTO biletateshtypura VALUES('', '$drejtimi', '$origjina', '$destinacioni', '$data', '$pasagjeret')";
+                mysqli_query($conn, $query);
+                echo "<script> alert('Suksese') </script>";
+            }
+        ?>
 
        <?php
           
@@ -300,8 +319,10 @@
           
           
           
-          
-          
+
+
+
+            //PJESA E LOGIN QE NUK ME FUNKSIONOI
           /*  include_once 'Pordoruesi.php';
             include_once 'PordoruesiRepository.php';
             if(isset($_POST['submit'])){
