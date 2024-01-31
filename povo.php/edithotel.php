@@ -1,7 +1,7 @@
 
 
 <?php
-include_once('hotelsRepository.php');
+include_once('hotelsRepozitory.php');
 
 $hotelId = $_GET['hotelId'];
 $hotelRepo = new HotelsRepository();
@@ -101,6 +101,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div>
             <label for="capacity">Nr persona</label>
             <input type="text" name="capacity" required value="<?php echo isset($hotel['Nrpersona']) ? $hotel['Nrpersona'] : ''; ?>">
+        </div>
+        <div>
+            <label for="img">Imazhi</label>
+            <input type="file" name="img" accept="image/*">
         </div>
         <div>
             <input type="submit" name="editBtn" value="Save">

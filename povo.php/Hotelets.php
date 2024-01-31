@@ -1,25 +1,23 @@
 
 <?php
-    class Hoteles {
-        private $hotel_id;
-        private $Emri;
-        private $Vendi;
-        private $kohaQendrimit;
-        private $Qmimi;
-        private $Nrpersona;
-        private $img;
-      
+ class Hoteles {
+    private $hotel_id;
+    private $Emri;
+    private $Vendi;
+    private $kohaQendrimit;
+    private $Qmimi;
+    private $Nrpersona;
+    private $img;
 
-        public function __construct($hotel_id,$Emri, $Vendi, $kohaQendrimit, $Qmimi, $Nrpersona,$img) {
-            $this->Emri = $Emri;
-            $this->Vendi = $Vendi;
-            $this->kohaQendrimit = $kohaQendrimit;
-            $this->Qmimi = $Qmimi;
-            $this->Nrpersona = $Nrpersona;
-            $this->hotel_id = $hotel_id;
-            $this->img=$img;
-        }
-    
+    public function __construct($hotel_id, $Emri, $Vendi, $kohaQendrimit, $Qmimi, $Nrpersona, $img) {
+        $this->hotel_id = $hotel_id;
+        $this->Emri = $Emri;
+        $this->Vendi = $Vendi;
+        $this->kohaQendrimit = $kohaQendrimit;
+        $this->Qmimi = $Qmimi;
+        $this->Nrpersona = $Nrpersona;
+        $this->img = $img;
+    }
         public function getEmri() {
             return $this->Emri;
         }
@@ -74,9 +72,9 @@
             $this->img=$img;
         }
         public function __toString() {
-            return "Hotel ID: " . $this->hotel_id . ", Emri: " . $this->Emri . ", Vendi: " . $this->Vendi . ", Koha Qendrimit: " . $this->kohaQendrimit . ", Qmimi: " . $this->Qmimi . ", Nr persona: " . $this->Nrpersona.",,img: :".$this->img;
+            return "Hotel ID: " . $this->hotel_id . ", Emri: " . $this->Emri . ", Vendi: " . $this->Vendi .
+                   ", Koha Qendrimit: " . $this->kohaQendrimit . ", Qmimi: " . $this->Qmimi .
+                   ", Nr persona: " . $this->Nrpersona . ", img: " . $this->img;
         }
     }
-    
     ?>
-    
