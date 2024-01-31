@@ -2,14 +2,14 @@
 class DatabaseConnectionii
 {
     private $host = "localhost";
-    private $username = "rooot";
+    private $username = "drilon";
     private $password = "";
-    private $db = "demo";
+    private $db = "hotels";
 
     function startConnection()
     {
         try {
-            $conn = new PDO("mysql:host=$this->host;dbname=demo", $this->username, $this->password);
+            $conn = new PDO("mysql:host=$this->host;dbname=hotels", $this->username, $this->password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             if (!$conn) {
