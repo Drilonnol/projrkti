@@ -1,22 +1,35 @@
-
-
 <?php
-include_once('hotelsRepozitory.php');
+include_once 'lidhjaHotel.php';
+include_once 'hotelsRepozitory.php';
 
-$hotelId = $_GET['hotelId'];
-$hotelRepo = new HotelsRepository();
-$hotel = $hotelRepo->getHotelById($hotelId);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['editBtn'])) {
     $hotelId = $_POST['hotelId'];
     $hotelName = $_POST['hotelName'];
-    $location = $_POST['location'];
-    $checkInTime = $_POST['checkInTime'];
-    $price = $_POST['price'];
-    $capacity = $_POST['capacity'];
+    $location = $_POST['vendi'];
+    $checkInTime = $_POST['kohaQendrimit'];
+    $price = $_POST['qmimi'];
+    $capacity = $_POST['nrPersona'];
 
-    $hotelRepo->editHotel($hotelId, $hotelName, $location, $checkInTime, $price, $capacity);
-    header("location:hotels.php");
+    
+    $newImagePath = null;
+
+    if ($_FILES['img']['size'] > 0) {
+        $targetDirectory = 'uploads/'; 
+        $newImagePath = $targetDirectory . basename($_FILES['img']['name']);
+        
+        if (move_uploaded_file($_FILES['img']['tmp_name'], $newImagePath)) {
+            echo "<script>alert('Imazhi u ngarkua me sukses.')</script>";
+        } else {
+            echo "<script>alert('Gabim gjatë ngarkimit të imazhit.')</script>";
+        }
+    }
+
+    $hotelRepo = new HotelsRepository();
+    $hotelRepo->updateHotelUsingQuery($hotelId, $hotelName, $location, $checkInTime, $price, $capacity, $newImagePath);
+
+    
+    header("Location: hotelet.php");
+    exit();
 }
 ?>
 
@@ -77,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h3>Edit Hotel</h3>
-    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
         <div>
             <label for="hotelId">Hotel ID</label>
             <input type="text" name="hotelId" required value="<?php echo isset($hotel['hotelId']) ? $hotel['hotelId'] : ''; ?>">
@@ -87,28 +100,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="hotelName" required value="<?php echo isset($hotel['Emri']) ? $hotel['Emri'] : ''; ?>">
         </div>
         <div>
-            <label for="location">Vendi</label>
-            <input type="text" name="location" required value="<?php echo isset($hotel['Vendi']) ? $hotel['Vendi'] : ''; ?>">
+            <label for="vendi">Vendi</label>
+            <input type="text" name="vendi" required value="<?php echo isset($hotel['Vendi']) ? $hotel['Vendi'] : ''; ?>">
         </div>
         <div>
-            <label for="checkInTime">Koha Qendrimit</label>
-            <input type="text" name="checkInTime" required value="<?php echo isset($hotel['kohaQendrimit']) ? $hotel['kohaQendrimit'] : ''; ?>">
+            <label for="kohaQendrimit">Koha Qendrimit</label>
+            <input type="text" name="kohaQendrimit" required value="<?php echo isset($hotel['kohaQendrimit']) ? $hotel['kohaQendrimit'] : ''; ?>">
         </div>
         <div>
-            <label for="price">Qmimi</label>
-            <input type="text" name="price" required value="<?php echo isset($hotel['Qmimi']) ? $hotel['Qmimi'] : ''; ?>">
+            <label for="qmimi">Qmimi</label>
+            <input type="text" name="qmimi" required value="<?php echo isset($hotel['Qmimi']) ? $hotel['Qmimi'] : ''; ?>">
         </div>
         <div>
-            <label for="capacity">Nr persona</label>
-            <input type="text" name="capacity" required value="<?php echo isset($hotel['Nrpersona']) ? $hotel['Nrpersona'] : ''; ?>">
+            <label for="nrPersona">Nr persona</label>
+            <input type="text" name="nrPersona" required value="<?php echo isset($hotel['Nrpersona']) ? $hotel['Nrpersona'] : ''; ?>">
         </div>
         <div>
-            <label for="img">Imazhi</label>
-            <input type="file" name="img" accept="image/*">
+            <label for="img">Ngarko imazhin (line te zbrazet nese nuk doni ta ndryshoni)</label>
+            <input type="file" name="img">
         </div>
         <div>
             <input type="submit" name="editBtn" value="Save">
         </div>
     </form>
+    
 </body>
 </html>

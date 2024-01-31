@@ -3,6 +3,9 @@ include_once 'Hotelets.php';
 include_once 'hotelsRepozitory.php';
 
 if (isset($_POST['submitBtn'])) {
+    
+    $hotelId = uniqid();
+
     $emri = isset($_POST['emri']) ? htmlspecialchars($_POST['emri']) : null;
     $vendi = isset($_POST['vendi']) ? htmlspecialchars($_POST['vendi']) : null;
     $kohaQendrimit = isset($_POST['kohaQendrimit']) ? htmlspecialchars($_POST['kohaQendrimit']) : null;
@@ -12,14 +15,13 @@ if (isset($_POST['submitBtn'])) {
     $img = $_FILES['img']['name'];
     $tempImgPath = $_FILES['img']['tmp_name'];
 
- 
-    $hotel = new Hoteles(null, $emri, $vendi, $kohaQendrimit, $qmimi, $nrPersona, $img);
+    $hotel = new Hoteles($hotelId, $emri, $vendi, $kohaQendrimit, $qmimi, $nrPersona, $img);
 
     $hotelsRepository = new HotelsRepository();
     $hotelsRepository->insertHotel($hotel);
 
     header("location:hotelet.php");
-    exit(); 
+    exit();
 }
 ?>
 
@@ -78,6 +80,9 @@ if (isset($_POST['submitBtn'])) {
 </head>
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
+    
+        <input type="hidden" name="hotelId" value="<?php echo $hotelId; ?>">
+
         <label for="emri">Emri i hotelit:</label>
         <input type="text" name="emri" required>
 
