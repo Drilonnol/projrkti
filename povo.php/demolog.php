@@ -43,9 +43,7 @@ class Admin {
         return $this->ID;
     }
 
-    public function validateData() {
-        // Shtoni logjikën e validimit të të dhënave këtu (për shembull, validimi i email-it)
-    }
+    
 
     public function __toString() {
         return "ID: " . $this->ID . ", Name: " . $this->Name . ", Email: " . $this->Email . " dhe Password: " . $this->Password;
