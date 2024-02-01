@@ -58,7 +58,15 @@ include_once ('lidhjademo.php');
             $statement->execute([$id]);
         }
 
-        //shtese per update: merr studentin ne baze te Id
+        public function autentikimi($email, $password) {
+            $sql = $this->connection->prepare("SELECT * FROM logindemo WHERE Email = :email AND Password = :password");
+            $sql->bindParam(':email', $email);
+            $sql->bindParam(':password', $password);
+            $sql->execute();
+    
+            return $sql->rowCount() > 0;
+        }
+   
 
         function getdeomoById($id){
             $conn = $this->connection;
@@ -71,6 +79,6 @@ include_once ('lidhjademo.php');
             return $demolog;
         }
 
-    }
+    } 
 
 ?>

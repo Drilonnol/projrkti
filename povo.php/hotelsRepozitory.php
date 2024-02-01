@@ -82,7 +82,7 @@ class HotelsRepository {
         
             echo "Gabim gjatë përditësimit të hotelit: " . $e->getMessage();
         }
-    }
+    } 
     function deleteHotel($id){
         $conn = $this->connection;
         $sql = "DELETE FROM hotel WHERE id=?";

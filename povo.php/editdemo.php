@@ -1,62 +1,42 @@
-<?php
+<?php 
+include_once('valudimiedit.php');
 include_once('demoRepository.php');
+
 session_start();
 
 if (!isset($_SESSION['emri'])) {
-   
     header("location: loginprovo.php");
     exit;
 }
-$id = $_GET['id'];
-$strep = new demoRepository();
-$demo = $strep->getdeomoById($id);
-
 
 $id_error = $emri_error = $email_error = $password_error = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validimi i ID
-    if (empty($_POST['id'])) {
-        $id_error = "ID .";
-    } elseif (!ctype_digit($_POST['id'])) {
-        $id_error = "ID duhet te permbaje vetem numra.";
-    } else {
-        $id = $_POST['id'];
-    }
+    $id = $_POST['id'];
+    $emri = $_POST['emri'];
+    $email = $_POST['emaili'];
+    $password = $_POST['password'];
 
-    // Validimi i emrit
-    if (empty($_POST['emri'])) {
-        $emri_error = "Emri ";
-    } elseif (!ctype_alpha($_POST['emri'])) {
-        $emri_error = "Emri duhet te permbaje vetem shkronja.";
-    } else {
-        $emri = $_POST['emri'];
-    }
+    $validimi = new ValidimiKlase1($id, $emri, $email, $password);
+    $validimi->validimi();
 
-    // Validimi i email-it
-    if (empty($_POST['emaili'])) {
-        $email_error = "Email.";
-    } elseif (!filter_var($_POST['emaili'], FILTER_VALIDATE_EMAIL)) {
-        $email_error = "Email-i nuk ka nje forma.";
-    } elseif (!strpos($_POST['emaili'], '.com')) {
-        $email_error = "Email-i duhet të përmbaje .com në fund.";
-    } else {
-        $email = $_POST['emaili'];
-    }
-
-    // Validimi i password-it
-    if (empty($_POST['password'])) {
-        $password_error = "Password .";
-    } else {
-        $password = $_POST['password'];
-    }
+    $id_error = $validimi->merrIdError();
+    $emri_error = $validimi->merrEmrinError();
+    $email_error = $validimi->merrEmailError();
+    $password_error = $validimi->merrPasswordError();
 
     if (empty($id_error) && empty($emri_error) && empty($email_error) && empty($password_error)) {
+        $strep = new demoRepository();
         $strep->editdemo($id, $emri, $email, $password);
         header("location:demos.php");
     }
 }
+
+$id = $_GET['id'];
+$strep = new demoRepository();
+$demo = $strep->getdeomoById($id);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
