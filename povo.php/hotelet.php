@@ -7,6 +7,14 @@ $conn = $dbConnection->startConnection();
 
 $hotelsRepository = new HotelsRepository();
 $hotels = $hotelsRepository->getAllHotels();
+
+session_start();
+
+if (!isset($_SESSION['emri'])) {
+   
+    header("location: loginprovo.php");
+    exit;
+}
 ?>
 
 
@@ -68,7 +76,7 @@ $hotels = $hotelsRepository->getAllHotels();
             <p>Koha Qendrimit: <?= htmlspecialchars($hotel['kohaQendrimit']) ?></p>
             <p>Qmimi: <?= htmlspecialchars($hotel['Qmimi']) ?></p>
             <p>Numri i Personave: <?= htmlspecialchars($hotel['Nrpersona']) ?></p>
-            <a href="edithotel.php?hotelId=<?= $hotel['id'] ?>">Edit Hotel</a>
+           
         </div>
     <?php } ?>
 </div>

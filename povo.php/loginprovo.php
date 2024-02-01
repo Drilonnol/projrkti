@@ -9,19 +9,21 @@ $connection = $conn->startConnection();
 
 $emri_error = $email_error = $password_error = $login_error = '';
 
+
+session_start(); 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $emri = $_POST["emri"];
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    
+
     if (empty($emri)) {
         $emri_error = "Emri .";
     } elseif (strlen($emri) < 3) {
         $emri_error = "Emri duhet të kete te pakten 3 shkronja.";
     }
 
-    
+
     if (empty($email)) {
         $email_error = "Email eshte i detyrueshem.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -44,18 +46,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sql->execute();
 
         if ($sql->rowCount() > 0) {
-          
-            header("location:demos.php");
-            exit;  
+            // Store user data in the session
+            $_SESSION['emri'] = $emri;
+            $_SESSION['email'] = $email;
+
+            header("location:indexdemo.php");
+            exit;
         } else {
             $login_error = "* Te dhenat nuk jane te sakta .";
         }
     }
 }
+ 
 ?>
-<link rel="stylesheet" href="../provoo.css">
 <style>
-      .logins {
+  .logins {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -85,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     margin-bottom: 12px;
     box-sizing: border-box;
     border-radius: 10px;
-    border: none ;
+    border: none;
     background-color: lightgrey;
 }
 
@@ -95,12 +100,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     cursor: pointer;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
 
-    </style>
-
-    <!DOCTYPE html>
+    </style><!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
@@ -128,6 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </form>
     </div>
 
-    <?php include_once('../footer.php'); ?>
+
 </body>
 </html>
+<?php include_once('../footer.php'); ?>

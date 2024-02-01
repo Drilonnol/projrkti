@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="provoo.css">
     <link rel="Website icon" href="wi7636f219-wizz-air-logo-finding-an-airline-with-pets-petrot (2).png">
     </head>
-<body style="background-color:rgb(223, 229, 235);" id="mainBody">
+
   
 
 
@@ -28,7 +28,8 @@
  </div>
      
     </div>
- 
+    </head>
+    <body style="background-color:rgb(223, 229, 235);" id="mainBody">
 
     <div id="coverImage">
 <div  class="style12"> 

@@ -1,6 +1,13 @@
 <?php
 include_once 'Hotelets.php';
 include_once 'hotelsRepozitory.php';
+session_start();
+
+if (!isset($_SESSION['emri'])) {
+   
+    header("location: loginprovo.php");
+    exit;
+}
 
 if (isset($_POST['submitBtn'])) {
     
@@ -41,36 +48,41 @@ if (isset($_POST['submitBtn'])) {
             max-width: 400px;
             margin: 20px auto;
             padding: 15px;
-            background-color: #fff;
+            background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
+            font-weight: bold;
         }
 
         input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 15px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 14px;
         }
 
         input[type="file"] {
-            margin-top: 5px; 
+            margin-top: 5px;
+            font-size: 14px;
         }
 
         input[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
+            background-color: grey;
+            color: white;
             cursor: pointer;
-            padding: 10px;
+            padding: 12px;
             border: none;
             border-radius: 4px;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {

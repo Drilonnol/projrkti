@@ -2,6 +2,13 @@
 include_once 'lidhjaHotel.php';
 include_once 'hotelsRepozitory.php';
 
+session_start();
+
+if (!isset($_SESSION['emri'])) {
+   
+    header("location: loginprovo.php");
+    exit;
+}
 if (isset($_POST['editBtn'])) {
     $hotelId = $_POST['hotelId'];
     $hotelName = $_POST['hotelName'];
@@ -46,45 +53,49 @@ if (isset($_POST['editBtn'])) {
             margin: 20px;
         }
 
-        h3 {
-            color: #333;
-        }
-
         form {
             max-width: 400px;
             margin: 20px auto;
             padding: 15px;
-            background-color: #fff;
+            background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 3px;
+            font-weight: bold;
         }
 
         input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
+            padding: 10px;
+            margin-bottom: 1%;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+            font-size: 14px;
         }
 
         input[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
+            background-color: grey;
+            color: white;
             cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {
             background-color: #45a049;
-        }
-
-        span {
-            color: red;
         }
     </style>
 </head>
@@ -94,7 +105,7 @@ if (isset($_POST['editBtn'])) {
         <div>
             <label for="hotelId">Hotel ID</label>
             <input type="text" name="hotelId" required value="<?php echo isset($hotel['hotelId']) ? $hotel['hotelId'] : ''; ?>">
-        </div>
+           </div>
         <div>
             <label for="hotelName">Emri</label>
             <input type="text" name="hotelName" required value="<?php echo isset($hotel['Emri']) ? $hotel['Emri'] : ''; ?>">

@@ -1,7 +1,7 @@
 
 <?php
 include_once 'demoRepository.php';
-$id = $_GET['id'];//e merr id prej url
+$id = $_GET['id'];
 
 $strep = new demoRepository();
 $strep->deletedemo($id);
