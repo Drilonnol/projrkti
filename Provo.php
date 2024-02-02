@@ -298,7 +298,7 @@
 
        <?php
           
-          require 'conection.php';
+         /* require 'conectionnew.php';
           if(isset($_POST['submit'])){
               $name=$_POST['emrimbiemri'];
               $email=$_POST['email'];

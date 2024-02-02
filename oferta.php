@@ -437,8 +437,8 @@
         document.getElementById("defaultOpen").click();
              </script>
         
-        <?php
-             require 'conectionnew.php';
+        <?php                
+            require 'conectionnew.php';
 
             if(isset($_POST['kliko'])){
                 $emri = $_POST['emri'];
@@ -453,6 +453,8 @@
                 $query = "INSERT INTO Hotelet VALUES('','$emri','$email','$telefoni','$datafillimit','$datambarimit','$tipi_dhomes','$zgjedhehotelin','$qmimi')";
                 mysqli_query($conn, $query);
                 echo "<script> alert('Suksese') </script>";
+                header('Location: another_page.php');
+                exit();
 
             }
         

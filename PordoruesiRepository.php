@@ -1,5 +1,5 @@
 <?php 
-      include_once('Lidhja.php');
+      include_once('conectionnew.php');
     class PordoruesiRepository{
         private $connection;
 
@@ -16,7 +16,7 @@
             $password=$pordoruesi->getPasword();
             $confirmimi=$pordoruesi->getConfirmimiPasword();
 
-            $sql="INSERT INTO rigjistrimi2(Emri,Email,pass,confirmimi) values (?,?,?,?)";
+            $sql="INSERT INTO tb_data1(Emri,Email,pass,confirmimi) values (?,?,?,?)";
             $statement = $conn->prepare($sql);
         
            $statement->execute([$emri, $email, $password,$confirmimi]);
