@@ -60,7 +60,7 @@ $result_rezervime = mysqli_query($conn, $query_rezervime);
             echo "<td>{$row['Emri']}</td>";
             echo "<td>{$row['Email']}</td>";
             echo "<td>{$row['Telefoni']}</td>";
-            echo "<td>{$row['Data_Fillimi']}</td>";
+            echo "<td>{$row['Data_Fillimit']}</td>";
             echo "<td>{$row['Data_Mbarimit']}</td>";
             echo "<td>{$row['Tipi_i_Dhomes']}</td>";
             echo "<td>{$row['Vendi-HOTELI']}</td>";
