@@ -30,10 +30,10 @@ class DatabaseConnectionii
 $db = new DatabaseConnectionii();
 $conn = $db->startConnection();
 
-
+/*
 if ($conn) {
     echo "Connection successful!";
 } else {
     echo "Connection failed!";
-}
+}*/
 ?>

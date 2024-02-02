@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 if (!isset($_SESSION['emri'])) {
    
@@ -82,9 +82,9 @@ $hotel = $strep->getAllHotels();
                 <td><?php echo isset($hote['Qmimi']) ? $hote['Qmimi'] : ''; ?></td>
                 <td><?php echo isset($hote['Nrpersona']) ? $hote['Nrpersona'] : ''; ?></td>
                 <td><?php echo isset($hote['img']) ? $hote['img'] : ''; ?></td>
-                <td> <a href="edithotel.php?page=edithotel">EditHote</a></td>
+                <td> <a href='edithotel.php?id=<?php echo $hote['id'] ?>'>EditHote</a></td>
                 <td> <a href="regjistrimihotelit.php?page=regjistrimihotelit">ShtoHotel</a> </a></td>
-                <td><a href='tabelhotel.php?id=<?php echo $demo['id'] ?>'>Delete</a></td>
+                <td><a href='deletehotel.php?id=<?php echo $hote['id'] ?>'>Delete</a></td>
             </tr>
         <?php } ?>
         </tbody>

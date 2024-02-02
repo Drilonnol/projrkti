@@ -1,7 +1,6 @@
 <?php
 include_once 'Hotelets.php';
 include_once 'hotelsRepozitory.php';
-session_start();
 
 if (!isset($_SESSION['emri'])) {
    
@@ -86,7 +85,7 @@ if (isset($_POST['submitBtn'])) {
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: lightseagreen;
         }
     </style>
 </head>
