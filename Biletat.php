@@ -1,11 +1,11 @@
 <?php
-include_once('Lidhja.php');
+include_once('LidhjaBileta.php');
 
 if (!isset($_SESSION)) {
     session_start();
 }
 
-class Biletat extends DatabaseConnection
+class Biletat
 {
     private $biletaID;
     private $emri;
@@ -69,8 +69,8 @@ class Biletat extends DatabaseConnection
             $this->setDestinacioni($_SESSION['destinacioni']);
             $this->setData($_SESSION['data']);
 
-            $sql = "INSERT INTO `kompania`(`emriKompanis`, `kompaniaLogo`, `adresaKompanis`) VALUES (?,?,?)";
-            $stm = $this->startConnection->prepare($sql);
+            $sql = "INSERT INTO (`emriKompanis`, `kompaniaLogo`, `adresaKompanis`) VALUES (?,?,?)";
+            $stm = $this->startConnection()->prepare($sql);
             $stm->execute([$this->emri, $this->destinacioni, $this->data]);
 
             $_SESSION['mesazhiMeSukses'] = true;

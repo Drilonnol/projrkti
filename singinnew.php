@@ -15,7 +15,7 @@
 
         }
 
-        $query="INSERT INTO tb_data values('','$name','$age','$county','$gender','$languages')";
+        $query="INSERT INTO tb_data3 values('','$name','$age','$email','$password','$county','$gender','$languages')";
         mysqli_query($conn,$query);
         echo"<script> alert('Suksese') </script>";
 
