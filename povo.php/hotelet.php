@@ -7,7 +7,17 @@ $conn = $dbConnection->startConnection();
 
 $hotelsRepository = new HotelsRepository();
 $hotels = $hotelsRepository->getAllHotels();
+
+session_start();
+
+if (!isset($_SESSION['emri'])) {
+   
+    header("location: loginprovo.php");
+    exit;
+}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +39,7 @@ $hotels = $hotelsRepository->getAllHotels();
         .hotel-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-around;
         }
 
         .hotel-card {
@@ -56,12 +66,16 @@ $hotels = $hotelsRepository->getAllHotels();
 <div class="hotel-container">
     <?php foreach ($hotels as $hotel) { ?>
         <div class="hotel-card">
-            <img class="hotel-image" src="<?= $hotel['img'] ?>" alt="<?= $hotel['Emri'] ?>">
-            <h3><?= $hotel['Emri'] ?></h3>
-            <p>Vendi: <?= $hotel['Vendi'] ?></p>
-            <p>Koha Qendrimit: <?= $hotel['kohaQendrimit'] ?></p>
-            <p>Qmimi: <?= $hotel['Qmimi'] ?></p>
-            <p>Numri i Personave: <?= $hotel['Nrpersona'] ?></p>
+            <?php if (!empty($hotel['img']) && file_exists($hotel['img'])) { ?>
+                <img class="hotel-image" src="<?= $hotel['img'] ?>" alt="<?= htmlspecialchars($hotel['Emri']) ?>">
+            <?php } else { ?>
+                <p>Fotografia e disponueshme</p>
+            <?php } ?>
+            <h3><?= htmlspecialchars($hotel['Emri']) ?></h3>
+            <p>Vendi: <?= htmlspecialchars($hotel['Vendi']) ?></p>
+            <p>Koha Qendrimit: <?= htmlspecialchars($hotel['kohaQendrimit']) ?></p>
+            <p>Qmimi: <?= htmlspecialchars($hotel['Qmimi']) ?></p>
+            <p>Numri i Personave: <?= htmlspecialchars($hotel['Nrpersona']) ?></p>
            
         </div>
     <?php } ?>
