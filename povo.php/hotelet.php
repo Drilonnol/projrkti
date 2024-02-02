@@ -1,7 +1,7 @@
 <?php
 include_once 'lidhjaHotel.php';
 include_once 'hotelsRepozitory.php';
-
+session_start();
 $dbConnection = new DatabaseConnectionii();
 $conn = $dbConnection->startConnection();
 

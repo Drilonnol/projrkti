@@ -1,33 +1,42 @@
 <?php
-include_once 'Hotelets.php';
-include_once 'hotelsRepozitory.php';
+include_once 'Bileta.php';
+include_once 'BiletaRepository.php';
+
 session_start();
+
 if (!isset($_SESSION['emri'])) {
-   
     header("location: loginprovo.php");
     exit;
 }
 
+function isBiletaNameUnique($biletaRepository, $emri) {
+    return $biletaRepository->isBiletaNameUnique($emri);
+}
+
 if (isset($_POST['submitBtn'])) {
-    
-    $hotelId = uniqid();
+    $biletaRepository = new BiletaRepository();
 
     $emri = isset($_POST['emri']) ? htmlspecialchars($_POST['emri']) : null;
-    $vendi = isset($_POST['vendi']) ? htmlspecialchars($_POST['vendi']) : null;
+    $vendiNisjes = isset($_POST['vendiNisjes']) ? htmlspecialchars($_POST['vendiNisjes']) : null;
+    $vendiMberritjes = isset($_POST['vendiMberritjes']) ? htmlspecialchars($_POST['vendiMberritjes']) : null;
     $kohaQendrimit = isset($_POST['kohaQendrimit']) ? htmlspecialchars($_POST['kohaQendrimit']) : null;
     $qmimi = isset($_POST['qmimi']) ? htmlspecialchars($_POST['qmimi']) : null;
     $nrPersona = isset($_POST['nrPersona']) ? htmlspecialchars($_POST['nrPersona']) : null;
-
     $img = $_FILES['img']['name'];
     $tempImgPath = $_FILES['img']['tmp_name'];
 
-    $hotel = new Hoteles($hotelId, $emri, $vendi, $kohaQendrimit, $qmimi, $nrPersona, $img);
+    if (!isBiletaNameUnique($biletaRepository, $emri)) {
+        echo "<script>alert('Bileta me kete emer ekziston. Zgjidhni nje emer të ndryshem.')</script>";
+    } else {
+        $bileta = new Bileta(null, $emri, $vendiNisjes, $kohaQendrimit, $qmimi, $nrPersona, $img,$vendiMberritjes);
+    
+       
 
-    $hotelsRepository = new HotelsRepository();
-    $hotelsRepository->insertHotel($hotel);
-
-    header("location:hotelet.php");
-    exit();
+        $biletaRepository->insertBileta($bileta);
+        echo "<script>alert('Bileta u regjistrua me sukses.')</script>";
+        header("location:Biletat.php");
+        exit();
+    }
 }
 ?>
 
@@ -92,13 +101,14 @@ if (isset($_POST['submitBtn'])) {
 <body>
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
     
-        <input type="hidden" name="hotelId" value="<?php echo $hotelId; ?>">
-
-        <label for="emri">Emri i hotelit:</label>
+        <label for="emri">Emri i biletës:</label>
         <input type="text" name="emri" required>
 
-        <label for="vendi">Vendi:</label>
-        <input type="text" name="vendi" required>
+        <label for="vendiNisjes">Vendi i nisjes:</label>
+        <input type="text" name="vendiNisjes" required>
+
+        <label for="vendiMberritjes">Vendi i mbërritjes:</label>
+        <input type="text" name="vendiMberritjes" required>
 
         <label for="kohaQendrimit">Koha e qëndrimit:</label>
         <input type="text" name="kohaQendrimit" required>
@@ -112,7 +122,7 @@ if (isset($_POST['submitBtn'])) {
         <label for="img">Ngarko imazhin:</label>
         <input type="file" name="img">
 
-        <input type="submit" name="submitBtn" value="Shto Hotel">
+        <input type="submit" name="submitBtn" value="Shto Bilet">
     </form>
 </body>
 </html>
