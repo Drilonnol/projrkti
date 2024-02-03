@@ -1,12 +1,22 @@
 <?php
 include_once 'LidhjaBileta.php';
 include_once 'PilotetRepozitory.php';
-
+session_start();
 $dbConnection = new DatabaseConnectionii();
 $conn = $dbConnection->startConnection();
 
 $pilotetRepozitory = new PilotetRepository();
 $pilotet = $pilotetRepozitory->getAllPilotet();
+
+if (!isset($_SESSION['Email']) && !isset($_SESSION['Pass'])) {
+    header("location: login.php");
+    exit;
+}
+
+$isAdmin = ($_SESSION['Email'] == 'agimi@hotmail.com');
+$isUser = ($_SESSION['Email'] != 'agimi@hotmail.com');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +91,10 @@ $pilotet = $pilotetRepozitory->getAllPilotet();
             <h3><?= htmlspecialchars($piloti['Emri']) ?></h3>
             <p><strong>Mbiemri:</strong><?= htmlspecialchars($piloti['Mbiemri']) ?></p>
             <p>VitiLindjes: <?= htmlspecialchars($piloti['Viti_Lindjes']) ?></p>
-           
+            <?php if ($isAdmin) { ?>
+            <br>
+            <button><a href='rigjistrimiPiloteve.php?id=<?php echo $piloti['id'] ?>'>Shto</a></button>
+            <?php } ?>
         </div>
     <?php } ?>
 </div>
