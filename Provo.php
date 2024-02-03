@@ -18,13 +18,13 @@
         <div class="am">
         
         <div id="a5"> <a href="file:///C:/Users/HP/Desktop/GitHub/projrkti/Provo.html">Home</a></div>
-        <div id="a2">Center</div>
-        <div id="a7"><a href="file:///C:/Users/HP/Desktop/GitHub/projrkti/oferta.html"  target="_blank">Ofert</a></div>
-        <div id="a3">New</div>
+        <div id="a7"><a href="fluturimi.php">Fluturimet</a></div>
+        <div id="a7"><a href="Oferta.php" >Ofert</a></div>
+        <div id="a3"><a href="piloti.php">Pilotet</a></div>
         
         <div id="a4"><button id="loginn">Log in</button ></div>
         <div id="a6"> <button id="Singinn">Sing in</button></a></div>
-       <div id="a5"> <a href="provo.php?page=hotelet">Index</a></div>
+       <div id="a5"> <a href="povo.php/indexdemo.php">Index</a></div>
       
    
  </div>
