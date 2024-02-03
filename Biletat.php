@@ -18,7 +18,6 @@ class Biletat
         $this->emri = $emri;
         $this->destinacioni = $destinacioni;
         $this->data = $data;
-        $this->DatabaseConnection = $this->startConnection();
     }
 
     public function getBiletaID()
@@ -59,24 +58,6 @@ class Biletat
     public function setData($data)
     {
         $this->data = $data;
-    }
-    public function insertoBileta()
-    {
-        try {
-        
-
-            $this->setEmri($_SESSION['emri']);
-            $this->setDestinacioni($_SESSION['destinacioni']);
-            $this->setData($_SESSION['data']);
-
-            $sql = "INSERT INTO (`emriKompanis`, `kompaniaLogo`, `adresaKompanis`) VALUES (?,?,?)";
-            $stm = $this->startConnection()->prepare($sql);
-            $stm->execute([$this->emri, $this->destinacioni, $this->data]);
-
-            $_SESSION['mesazhiMeSukses'] = true;
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
     }
 }
 ?>

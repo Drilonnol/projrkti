@@ -13,7 +13,7 @@ class BiletaRepository {
     public function getAllBileta(){
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM biletateshtypura";
+        $sql = "SELECT * FROM biletat_shtohen";
         $statement = $conn->query($sql);
 
         $demolog = $statement->fetchAll();
@@ -47,15 +47,13 @@ class BiletaRepository {
     public function insertBileta($bileta) {
         $conn = $this->connection;
 
-        $emri = $bileta->getEmriBiletes();
+        $emri = $bileta->getEmri();
         $nga = $bileta->getNga();
         $deri = $bileta->getDeri();
         $data = $bileta->getDataa();
-        $nrPass=$bileta->getNumriPasagjerve();
-
-        $sql = "INSERT INTO biletat_shtohen(EmriBiletes, Nga, Deri, Dataa,NumriPasagjerve) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO biletat_shtohen(EmriBiletes, Nga, Deri, Dataa) VALUES (?, ?, ?, ?)";
         $statement = $conn->prepare($sql);
-        $statement->execute([$emri, $nga, $deri, $data,$nrPass]);
+        $statement->execute([$emri, $nga, $deri, $data]);
 
         echo "<script>alert('U shtua me sukses!')</script>";
     }
