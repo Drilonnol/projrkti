@@ -7,6 +7,7 @@ if (!isset($_SESSION['emri']) && !isset($_SESSION['email'])) {
 }
 
 $isAdmin = ($_SESSION['email'] == 'drilo2020@gmail.com');
+
 ?>
 
 <?php include_once('head2.php');?>
@@ -55,6 +56,10 @@ $isAdmin = ($_SESSION['email'] == 'drilo2020@gmail.com');
         $url='indexdemo';
     }
     switch($url){ 
+          
+            case'Rezervimet':
+                include('Regjistrimitabel.php');
+                break;
             case'logout':
                 include('logout.php');
                 break;
