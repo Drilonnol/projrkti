@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($sukses) {
             $_SESSION['emri'] = $emri;
             $_SESSION['email'] = $email;
-
             header("location:indexdemo.php");
             exit;
         } else {
@@ -50,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 .login-form {
-    background-color: #fff;
+    background-color: lightgoldenrodyellow;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -73,8 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 .logins input[type="submit"] {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: black;
+    color: white;
     cursor: pointer;
 }
 
@@ -85,14 +84,9 @@ body {
 
     </style><!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="../provoo.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+
+<?php include_once('../head.php'); ?>
 <body>
     <br><br>
     <div class="logins">
@@ -116,5 +110,5 @@ body {
 
 
 </body>
-</html>
 <?php include_once('../footer.php'); ?>
+</html>

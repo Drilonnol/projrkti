@@ -1,21 +1,25 @@
 <?php
 include_once 'lidhjaHotel.php';
 include_once 'hotelsRepozitory.php';
-
+session_start();
 $dbConnection = new DatabaseConnectionii();
 $conn = $dbConnection->startConnection();
 
 $hotelsRepository = new HotelsRepository();
 $hotels = $hotelsRepository->getAllHotels();
 
-session_start();
 
-if (!isset($_SESSION['emri'])) {
-   
+
+
+if (!isset($_SESSION['emri']) && !isset($_SESSION['email'])) {
     header("location: loginprovo.php");
     exit;
 }
+
+$isAdmin = ($_SESSION['email'] == 'drilo2020@gmail.com');
+$isUser = ($_SESSION['email'] != 'drilo2020@gmail.com');
 ?>
+
 
 
 
@@ -64,21 +68,27 @@ if (!isset($_SESSION['emri'])) {
 <h2>Lista e Hoteleve</h2>
 
 <div class="hotel-container">
-    <?php foreach ($hotels as $hotel) { ?>
-        <div class="hotel-card">
-            <?php if (!empty($hotel['img']) && file_exists($hotel['img'])) { ?>
-                <img class="hotel-image" src="<?= $hotel['img'] ?>" alt="<?= htmlspecialchars($hotel['Emri']) ?>">
-            <?php } else { ?>
-                <p>Fotografia e disponueshme</p>
+<?php foreach ($hotels as $hotel) { ?>
+    <div class="hotel-card">
+        <?php if (!empty($hotel['img']) && file_exists($hotel['img'])) { ?>
+            <img class="hotel-image" src="<?= $hotel['img'] ?>" alt="<?= htmlspecialchars($hotel['Emri']) ?>">
+        <?php } else { ?>
+            <p>Fotografia e disponueshme</p>
+        <?php } ?>
+        <h3><?= htmlspecialchars($hotel['Emri']) ?></h3>
+        <p>Vendi: <?= htmlspecialchars($hotel['Vendi']) ?></p>
+        <p>Koha Qendrimit: <?= htmlspecialchars($hotel['kohaQendrimit']) ?></p>
+        <p>Qmimi: <?= htmlspecialchars($hotel['Qmimi']) ?></p>
+        <p>Numri i Personave: <?= htmlspecialchars($hotel['Nrpersona']) ?></p>
+          <?php if($isUser) {?>
+            <button>Rezervo</button>
             <?php } ?>
-            <h3><?= htmlspecialchars($hotel['Emri']) ?></h3>
-            <p>Vendi: <?= htmlspecialchars($hotel['Vendi']) ?></p>
-            <p>Koha Qendrimit: <?= htmlspecialchars($hotel['kohaQendrimit']) ?></p>
-            <p>Qmimi: <?= htmlspecialchars($hotel['Qmimi']) ?></p>
-            <p>Numri i Personave: <?= htmlspecialchars($hotel['Nrpersona']) ?></p>
-           
-        </div>
-    <?php } ?>
+        <?php if ($isAdmin) { ?>
+            <a href='edithotel.php?id=<?php echo $hotel['id'] ?>'>EditHote</a>
+            <a href='deletehotel.php?id=<?php echo $hotel['id'] ?>'>Delete</a>
+        <?php } ?>
+    </div>
+<?php } ?>
 </div>
 
 </body>

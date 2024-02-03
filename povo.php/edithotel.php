@@ -1,9 +1,7 @@
 <?php
 include_once 'lidhjaHotel.php';
 include_once 'hotelsRepozitory.php';
-
 session_start();
-
 if (!isset($_SESSION['emri'])) {
    
     header("location: loginprovo.php");
@@ -38,6 +36,9 @@ if (isset($_POST['editBtn'])) {
     header("Location: hotelet.php");
     exit();
 }
+$id = $_GET['id'];
+$strep = new HotelsRepository();
+$hotel = $strep->getHotelById($id);
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +105,7 @@ if (isset($_POST['editBtn'])) {
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
         <div>
             <label for="hotelId">Hotel ID</label>
-            <input type="text" name="hotelId" required value="<?php echo isset($hotel['hotelId']) ? $hotel['hotelId'] : ''; ?>">
+            <input type="text" name="hotelId" required value="<?php echo isset($hotel['id']) ? $hotel['id'] : ''; ?>">
            </div>
         <div>
             <label for="hotelName">Emri</label>

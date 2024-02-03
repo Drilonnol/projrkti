@@ -31,9 +31,9 @@ $db = new DatabaseConnectionii();
 $conn = $db->startConnection();
 
 
-if ($conn) {
+/*if ($conn) {
     echo "Connection successful!";
 } else {
     echo "Connection failed!";
-}
+}*/
 ?>

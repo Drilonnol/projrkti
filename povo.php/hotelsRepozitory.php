@@ -11,36 +11,28 @@ class HotelsRepository {
     }
 
     public function getAllHotels() {
-        $query = "SELECT * FROM hotel";
-        $result = $this->connection->query($query);
-    
-        return $result->fetchAll(PDO::FETCH_ASSOC);
+        $conn = $this->connection;
+        $sql = "SELECT * FROM hotel";
+        $statement = $conn->query($sql);
+        $hotelog = $statement->fetchAll();
+        return $hotelog;
     }
-    
-
+  
+    function deleteHotel($id){
+        $conn = $this->connection;
+        $sql = "DELETE FROM hotel WHERE id=?";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$id]);
+    }
     public function getHotelById($hotelId) {
-        $query = "SELECT * FROM hotel WHERE id = :hotelId";
-        $stmt = $this->connection->prepare($query);
-        $stmt->bindParam(':hotelId', $hotelId);
-        $stmt->execute();
-    
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        if (is_array($result)) {
-            $emri = $result['Emri'];
-            $vendi = $result['Vendi'];
-            $kohaQendrimit = $result['kohaQendrimit'];
-            $qmimi = $result['Qmimi'];
-            $nrPersona = $result['Nrpersona'];
-    
-        
-        } else {
-          
-        }
-        
-        return $result;
+        $conn = $this->connection;
+        $sql = "SELECT * FROM hotel WHERE id=?";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$hotelId]);
+        $Hotellog=$statement->fetch();
+       
+        return $Hotellog;
     }
-
     public function insertHotel($hotel) {
         $conn = $this->connection;
 
@@ -83,12 +75,7 @@ class HotelsRepository {
             echo "Gabim gjatë përditësimit të hotelit: " . $e->getMessage();
         }
     } 
-    function deleteHotel($id){
-        $conn = $this->connection;
-        $sql = "DELETE FROM hotel WHERE id=?";
-        $statement = $conn->prepare($sql);
-        $statement->execute([$id]);
-    }
+   
 }
 
 

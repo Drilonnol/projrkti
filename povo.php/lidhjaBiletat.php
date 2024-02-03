@@ -1,15 +1,15 @@
 <?php
-class DatabaseConnectionii
+class DatabaseConnectioniii
 {
     private $host = "localhost";
     private $username = "drilon";
     private $password = "";
-    private $db = "hotels";
+    private $db = "bileta";
 
     function startConnection()
     {
         try {
-            $conn = new PDO("mysql:host=$this->host;dbname=hotels", $this->username, $this->password);
+            $conn = new PDO("mysql:host=$this->host;dbname=bileta", $this->username, $this->password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             if (!$conn) {
@@ -27,13 +27,12 @@ class DatabaseConnectionii
     }
 }
 
-$db = new DatabaseConnectionii();
+$db = new DatabaseConnectioniii();
 $conn = $db->startConnection();
 
-/*
 if ($conn) {
     echo "Connection successful!";
 } else {
     echo "Connection failed!";
-}*/
+}
 ?>

@@ -1,11 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['emri'])) {
-   
+if (!isset($_SESSION['emri']) && !isset($_SESSION['email'])) {
     header("location: loginprovo.php");
     exit;
 }
+
+$isAdmin = ($_SESSION['email'] == 'drilo2020@gmail.com');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,17 +61,15 @@ if (!isset($_SESSION['emri'])) {
 </head>
 <body>
 
-<header>
-    <h1>Header</h1>
-</header>
-
 <nav>
-    <button><a href="indexdemo.php?page=demos">tabelaLog</a></button>
-    <button><a href="indexdemo.php?page=edithotel">edithotel</a></button>
-    <button><a href="indexdemo.php?page=editlog">editlog</a></button>
-    <button><a href="indexdemo.php?page=hotelet">hotelet</a></button>
-    <button><a href="indexdemo.php?page=regjisthotelet">regjistrimihotelit</a></button>
-    <button><a href="indexdemo.php?page=tabelahotel">tabelahotel</a></button>
+    <button><a href="indexdemo.php?page=hotelet">Hotelet</a></button>
+    <?php
+    if ($isAdmin) {
+        echo '<button><a href="indexdemo.php?page=tabelhotel">Tabela e Hoteleve</a></button>';
+        echo '<button><a href="indexdemo.php?page=demos">Demos</a></button>';
+    }
+    ?>
+    <button><a href="indexdemo.php?page=logout">Logout</a></button>
 </nav>
 
 <div>
@@ -81,23 +80,17 @@ if (!isset($_SESSION['emri'])) {
         $url='indexdemo';
     }
     switch($url){ 
-        case 'demos':
-            include ('demos.php');
-            break;
-        case 'edithotel':
-            include ('edithotel.php');
-            break;
-        case 'hotelet':
-            include('hotelet.php');
-            break;
-        case 'regjisthotelet':
-            include ('regjistrimihotelit.php');
-            break;
-        case 'tabelahotel':
-            include ('tabelhotel.php');
-            break;
+            case'logout':
+                include('logout.php');
+                break;
+                        case'tabelhotel':
+                            include ('tabelhotel.php');
+                            break;
+                                case'demos':
+                                    include ('demos.php');
+                                    break;
         default:
-            include ('editdemo.php');
+            include ('hotelet.php');
             break;
     }
     ?>
