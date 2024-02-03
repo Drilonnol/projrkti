@@ -95,7 +95,9 @@ $isUser = ($_SESSION['email'] != 'drilo2020@gmail.com');
         <p>Qmimi i rezervimit <?= htmlspecialchars($hotel['Qmimi']) ?>$</p>
         <p>Numri i Personave: <?= htmlspecialchars($hotel['Nrpersona']) ?></p>
           <?php if($isUser) {?>
-            <button>Rezervo</button>
+            <form method="post" action="Regjistrimirez.php">
+            <button><a href='Regjistrimirez.php?id=<?php echo $hotel['id'] ?>'>Rezervo</a></button>
+            </form>
             <?php } ?>
         <?php if ($isAdmin) { ?>
             <br>

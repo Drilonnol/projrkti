@@ -28,60 +28,62 @@ $isUser = ($_SESSION['email'] != 'drilo2020@gmail.com');
     <title>Lista e Biletave</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            margin: 20px;
-            color: white;
-        }
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 20px;
+    color: white;
+}
 
-        h2 {
-            text-align: center;
-        }
+h2 {
+    text-align: center;
+}
 
-        .bileta-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            text-align: center; 
-        }
+.bileta-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
 
-        img {
+img {
     height: 130px;
     width: 280px;
     position: relative;
+    filter: blur(0.7px);
     z-index: -1;
-    filter: blur(2px);
-  z-index: -1;
-  border-radius: 30px;
+    border-radius: 30px;
 }
 
-        .bileta-card {
-            padding-top: 1%;
-            border: 2px ridge grey;
-            border-radius: 30px;
-            height: 170px;
-            width: 350px;
-            text-align: center;
-            margin-bottom: 1%;
-            background-color: grey;
-            z-index: 1;
-           margin-bottom: 4%;
-        }
+.bileta-card {
+    padding-top: 1%;
+    border: 2px ridge grey;
+    border-radius: 30px;
+    height: 170px;
+    width: 350px;
+    text-align: center;
+    margin-bottom: 1%;
+    background-color: grey;
+    z-index: 1;
+    margin-bottom: 4%;
+}
 
-        .p {
-            text-align: start;
-            margin-left: 1.4%;
-            position: sticky;
-            margin-top: -35%;
+.p {
+    text-align: start;
+    margin-left: 1.4%;
+    position: sticky;
+    margin-top: -35%;
+}
 
-        }
+button {
+    width: 75px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: blue;
+   
+}
 
-        button {
-            width: 75px;
-            height: 30px;
-            border-radius: 20px;
-            background-color: blue;
-        }
+
+   
     </style>
 </head>
 

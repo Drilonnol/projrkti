@@ -14,6 +14,7 @@
     <button><a href="indexdemo.php?page=hotelet">Hotelet</a></button>
     <?php
     if ($isAdmin) {
+        echo '<button><a href="indexdemo.php?page=Rezervimet">Rezervimet</a></button>';
         echo '<button><a href="indexdemo.php?page=tabelhotel">Tabela Hotelev</a></button>';
         echo '<button><a href="indexdemo.php?page=demos">Demos</a></button>';
     }
