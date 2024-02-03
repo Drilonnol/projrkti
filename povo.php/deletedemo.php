@@ -6,5 +6,5 @@ $id = $_GET['id'];
 $strep = new demoRepository();
 $strep->deletedemo($id);
 
-header("location:demos.php");
+header("location:indexdemo.php");
 ?>

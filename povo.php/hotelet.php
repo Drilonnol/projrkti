@@ -31,13 +31,16 @@ $isUser = ($_SESSION['email'] != 'drilo2020@gmail.com');
     <title>Lista e Hoteleve</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: white;
             margin: 20px;
+            font-family: Arial, sans-serif;
         }
 
         h2 {
             text-align: center;
+        }
+        p{
+            text-align: start;
         }
 
         .hotel-container {
@@ -47,19 +50,30 @@ $isUser = ($_SESSION['email'] != 'drilo2020@gmail.com');
         }
 
         .hotel-card {
-            border: 1px solid #ccc;
+            border: 1px solid black;
             border-radius: 8px;
             margin: 10px;
             padding: 10px;
-            width: 200px;
+            width: 300px;
             text-align: center;
         }
 
         .hotel-image {
-            width: 100%;
-            height: auto;
+            width: 300px;
+            height:200px;
             border-radius: 8px;
             margin-bottom: 10px;
+        }
+        a{
+            color:white;
+        }
+        button{
+            background-color: blue;
+            border-radius: 20px;
+            height: 30px;
+          margin-right: 30px;
+          margin-left: 20px;
+          width: 90px;
         }
     </style>
 </head>
@@ -76,16 +90,17 @@ $isUser = ($_SESSION['email'] != 'drilo2020@gmail.com');
             <p>Fotografia e disponueshme</p>
         <?php } ?>
         <h3><?= htmlspecialchars($hotel['Emri']) ?></h3>
-        <p>Vendi: <?= htmlspecialchars($hotel['Vendi']) ?></p>
-        <p>Koha Qendrimit: <?= htmlspecialchars($hotel['kohaQendrimit']) ?></p>
-        <p>Qmimi: <?= htmlspecialchars($hotel['Qmimi']) ?></p>
+        <p>Vendi ku ndodhet hoteli eshte <?= htmlspecialchars($hotel['Vendi']) ?></p>
+        <p>koha e qendrimit  <?= htmlspecialchars($hotel['kohaQendrimit']) ?> DAY</p>
+        <p>Qmimi i rezervimit <?= htmlspecialchars($hotel['Qmimi']) ?>$</p>
         <p>Numri i Personave: <?= htmlspecialchars($hotel['Nrpersona']) ?></p>
           <?php if($isUser) {?>
             <button>Rezervo</button>
             <?php } ?>
         <?php if ($isAdmin) { ?>
-            <a href='edithotel.php?id=<?php echo $hotel['id'] ?>'>EditHote</a>
-            <a href='deletehotel.php?id=<?php echo $hotel['id'] ?>'>Delete</a>
+            <br>
+            <button><a href='edithotel.php?id=<?php echo $hotel['id'] ?>'>EditHote</a></button>
+            <button><a href='deletehotel.php?id=<?php echo $hotel['id'] ?>'>Delete</a></button>
         <?php } ?>
     </div>
 <?php } ?>

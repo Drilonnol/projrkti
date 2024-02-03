@@ -34,7 +34,7 @@ if (isset($_POST['submitBtn'])) {
 
         $biletaRepository->insertBileta($bileta);
         echo "<script>alert('Bileta u regjistrua me sukses.')</script>";
-        header("location:Biletat.php");
+        header("location:indexdemo.php");
         exit();
     }
 }

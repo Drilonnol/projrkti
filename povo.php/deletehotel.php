@@ -6,7 +6,7 @@ include_once 'hotelsRepozitory.php';
     $strep = new HotelsRepository();
     $strep->deleteHotel($id);
     
-    header("location:hotelet.php");
+    header("location:indexdemo.php");
 
 
 ?>

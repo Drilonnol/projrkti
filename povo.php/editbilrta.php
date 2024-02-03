@@ -1,21 +1,23 @@
 <?php
-include_once 'lidhjaHotel.php';
-include_once 'hotelsRepozitory.php';
+include_once 'lidhjaBiletat.php';
+include_once 'BiletaRepository.php';
+
 session_start();
+
 if (!isset($_SESSION['emri'])) {
-   
     header("location: loginprovo.php");
     exit;
 }
-if (isset($_POST['editBtn'])) {
-    $hotelId = $_POST['hotelId'];
-    $hotelName = $_POST['hotelName'];
-    $location = $_POST['vendi'];
-    $checkInTime = $_POST['kohaQendrimit'];
-    $price = $_POST['qmimi'];
-    $capacity = $_POST['nrPersona'];
 
-    
+if (isset($_POST['editBtn'])) {
+    $biletaId = $_POST['biletaId'];
+    $biletaName = $_POST['biletaName'];
+    $vendiNisjes = $_POST['vendiNisjes'];
+    $vendiMberritjes = $_POST['vendiMberritjes'];
+    $kohaQendrimit = $_POST['kohaQendrimit'];
+    $qmimi = $_POST['qmimi'];
+    $nrPersona = $_POST['nrPersona'];
+
     $newImagePath = null;
 
     if ($_FILES['img']['size'] > 0) {
@@ -28,17 +30,17 @@ if (isset($_POST['editBtn'])) {
             echo "<script>alert('Gabim gjatë ngarkimit të imazhit.')</script>";
         }
     }
+    $id = $_GET['id'];
+    $biletaRepo = new BiletaRepository();
+    $biletaRepo->updateBileta($biletaId, $biletaName, $vendiNisjes, $vendiMberritjes, $kohaQendrimit, $qmimi, $nrPersona, $newImagePath);
 
-    $hotelRepo = new HotelsRepository();
-    $hotelRepo->updateHotel($hotelId, $hotelName, $location, $checkInTime, $price, $capacity, $newImagePath);
-
-    
     header("Location: indexdemo.php");
     exit();
 }
-$id = $_GET['id'];
-$strep = new HotelsRepository();
-$hotel = $strep->getHotelById($id);
+
+$biletaId = $_GET['id'];
+$biletaRepo = new BiletaRepository();
+$bileta = $biletaRepo->getBiletaById($biletaId);
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +48,7 @@ $hotel = $strep->getHotelById($id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Hotel</title>
+    <title>Edit Bilete</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -100,41 +102,45 @@ $hotel = $strep->getHotelById($id);
         }
     </style>
 </head>
+
 <body>
-    <h3>Edit Hotel</h3>
+    <h3>Edit Bilete</h3>
     <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data">
         <div>
-            <label for="hotelId">Hotel ID</label>
-            <input type="text" name="hotelId" required value="<?php echo isset($hotel['id']) ? $hotel['id'] : ''; ?>">
-           </div>
-        <div>
-            <label for="hotelName">Emri</label>
-            <input type="text" name="hotelName" required value="<?php echo isset($hotel['Emri']) ? $hotel['Emri'] : ''; ?>">
+            <label for="biletaId">Bileta ID</label>
+            <input type="text" name="biletaId" required value="<?php echo isset($bileta['id']) ? $bileta['id'] : ''; ?>">
         </div>
         <div>
-            <label for="vendi">Vendi</label>
-            <input type="text" name="vendi" required value="<?php echo isset($hotel['Vendi']) ? $hotel['Vendi'] : ''; ?>">
+            <label for="biletaName">Emri</label>
+            <input type="text" name="biletaName" required value="<?php echo isset($bileta['Emri']) ? $bileta['Emri'] : ''; ?>">
+        </div>
+        <div>
+            <label for="vendiNisjes">Vendi Nisjes</label>
+            <input type="text" name="vendiNisjes" required value="<?php echo isset($bileta['Vendinis']) ? $bileta['Vendinis'] : ''; ?>">
+        </div>
+        <div>
+            <label for="vendiMberritjes">Vendi Mberritjes</label>
+            <input type="text" name="vendiMberritjes" required value="<?php echo isset($bileta['Vendimberritjes']) ? $bileta['Vendimberritjes'] : ''; ?>">
         </div>
         <div>
             <label for="kohaQendrimit">Koha Qendrimit</label>
-            <input type="text" name="kohaQendrimit" required value="<?php echo isset($hotel['kohaQendrimit']) ? $hotel['kohaQendrimit'] : ''; ?>">
+            <input type="text" name="kohaQendrimit" required value="<?php echo isset($bileta['kohaQendrimit']) ? $bileta['kohaQendrimit'] : ''; ?>">
         </div>
         <div>
             <label for="qmimi">Qmimi</label>
-            <input type="text" name="qmimi" required value="<?php echo isset($hotel['Qmimi']) ? $hotel['Qmimi'] : ''; ?>">
+            <input type="text" name="qmimi" required value="<?php echo isset($bileta['Qmimi']) ? $bileta['Qmimi'] : ''; ?>">
         </div>
         <div>
             <label for="nrPersona">Nr persona</label>
-            <input type="text" name="nrPersona" required value="<?php echo isset($hotel['Nrpersona']) ? $hotel['Nrpersona'] : ''; ?>">
+            <input type="text" name="nrPersona" required value="<?php echo isset($bileta['Nrpersonav']) ? $bileta['Nrpersonav'] : ''; ?>">
         </div>
         <div>
-            <label for="img">Ngarko imazhin (line te zbrazet nese nuk doni ta ndryshoni)</label>
+            <label for="img">Ngarko imazhin (lënë të zbrazët nëse nuk doni ta ndryshoni)</label>
             <input type="file" name="img">
         </div>
         <div>
             <input type="submit" name="editBtn" value="Save">
         </div>
     </form>
-    
 </body>
 </html>

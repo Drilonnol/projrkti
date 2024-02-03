@@ -28,9 +28,10 @@
        
        }#a3{
            margin-right: 20px;
-
+           background-color: black;
+           }
            
-           }#a5{
+           #a5{
                margin-right: 20px;
                
                }
@@ -52,6 +53,9 @@
                }
                #a7{
                 margin-right: 20px;
+               }
+               .a8 button{
+                background-color: #000000;
                }
              
    .b{

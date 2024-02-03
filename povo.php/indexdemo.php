@@ -8,71 +8,46 @@ if (!isset($_SESSION['emri']) && !isset($_SESSION['email'])) {
 
 $isAdmin = ($_SESSION['email'] == 'drilo2020@gmail.com');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-     
-    body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; 
-    }
-    header, footer {
-        background-color: #333;
-        color: white;
-        padding: 10px;
-        text-align: center;
-    }
 
-    nav {
-        background-color: #ddd;
-        padding: 10px;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap; 
-    }
+<?php include_once('head2.php');?>
+<style>
+   
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
 
-    nav button {
-        text-decoration: none;
-        color: #333;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #fff;
-        margin-bottom: 5px; 
-    }
+        nav {
+            background-color: black;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; 
+        }
 
-    nav button a {
-        text-decoration: none;
-        color: #333;
-    }
+        nav button {
+            text-decoration: none;
+            color: black;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            margin-bottom: 5px; 
+            width: 100px;
+            height: 40px;
+            font-size: 15px;
+        }
 
-
-    footer {
-        margin-top: auto; 
-    }
-</style>
+        nav a {
+            color: black;
+        }
+    </style>
 </head>
-<body>
 
-<nav>
-    <button><a href="indexdemo.php?page=hotelet">Hotelet</a></button>
-    <?php
-    if ($isAdmin) {
-        echo '<button><a href="indexdemo.php?page=tabelhotel">Tabela e Hoteleve</a></button>';
-        echo '<button><a href="indexdemo.php?page=demos">Demos</a></button>';
-    }
-    ?>
-    <button><a href="indexdemo.php?page=logout">Logout</a></button>
-</nav>
 
-<div>
+
     <?php
     if(isset($_GET['page'])){
         $url=($_GET['page']);
@@ -83,6 +58,9 @@ $isAdmin = ($_SESSION['email'] == 'drilo2020@gmail.com');
             case'logout':
                 include('logout.php');
                 break;
+                case'biletat':
+                    include('Biletat.php');
+                    break;
                         case'tabelhotel':
                             include ('tabelhotel.php');
                             break;
@@ -96,9 +74,9 @@ $isAdmin = ($_SESSION['email'] == 'drilo2020@gmail.com');
     ?>
 </div>
 
-<footer>
-    <p>Footer</p>
-</footer>
+
 
 </body>
+
 </html>
+<?php include_once('../footer.php'); ?>

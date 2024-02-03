@@ -50,8 +50,8 @@ class HotelsRepository {
         echo "<script>alert('U shtua me sukses!')</script>";
     }
 
-    public function updateHotelUsingQuery($hotelId, $hotelName, $location, $checkInTime, $price, $capacity, $newImagePath) {
-        try {
+    public function updateHotel($hotelId, $hotelName, $location, $checkInTime, $price, $capacity, $newImagePath) {
+
             $query = "UPDATE hotel SET Emri = :hotelName, Vendi = :location, kohaQendrimit = :checkInTime, Qmimi = :price, Nrpersona = :capacity, img = :newImagePath WHERE id = :hotelId";
             $stmt = $this->connection->prepare($query);
             $stmt->bindParam(':hotelName', $hotelName);
@@ -64,16 +64,7 @@ class HotelsRepository {
     
             $stmt->execute();
     
-            if ($stmt->rowCount() > 0) {
-              
-                echo "Hoteli u përditësua me sukses!";
-            } else {
-                echo "Nuk u bë asnjë ndryshim në hotel.";
-            }
-        } catch (PDOException $e) {
-        
-            echo "Gabim gjatë përditësimit të hotelit: " . $e->getMessage();
-        }
+            
     } 
    
 }

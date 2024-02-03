@@ -1,79 +1,77 @@
 <?php
 include_once 'demoRepository.php';
 
-$strep = new demoRepository();
-$demos = $strep->getAllDemo();
+$demoRepository = new demoRepository();
+$demos = $demoRepository->getAllDemo();
 session_start();
-
 if (!isset($_SESSION['emri'])) {
-   
     header("location: loginprovo.php");
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
-<style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista e Demove</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #f4f4f4;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 80%;
-        margin: auto;
-        margin-top: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-        border-radius: 8px;
-    }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid grey;
+        }
 
-    th,
-    td {
-        padding: 12px;
-        text-align: left;
-        border: 1px solid #ddd;
-    }
+        th {
+            background-color: lightgrey;
+        }
 
-    th {
-        background-color: #333;
-        color: white;
-    }
+        tr:hover {
+            background-color: lightgray;
+        }
 
-    tr:nth-child(even) {
-        background-color: #f9f9f9;
-    }
+        .button a {
+            padding: 5px 10px;
+            border: 1px solid black;
+            background-color: lightgray;
+            color: black;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 5px;
+        }
 
-    a {
-        text-decoration: none;
-        color: #3498db;
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
+        @media screen and (max-width: 768px) {
+            th, td {
+                display: block;
+                width: 100%;
+               
+            }
 
-    a:hover {
-        background-color: #3498db;
-        color: #fff;
-    }
-</style>
+        }
+    </style>
+
+</head>
 
 <body>
-    <table border="1">
+    <h2>Lista e Demove</h2>
+    <table>
         <thead>
-            <tr>
-                <th>ID</th> 
+            <tr class="button">
+                <th>ID</th>
                 <th>Emri</th>
                 <th>Emaili</th>
                 <th>Password</th>
@@ -82,17 +80,18 @@ if (!isset($_SESSION['emri'])) {
             </tr>
         </thead>
         <tbody>
-        <?php foreach ($demos as $demo) { ?>
-            <tr>
-                <td><?php echo isset($demo['id']) ? $demo['id'] : ''; ?></td>
-                <td><?php echo isset($demo['Emri']) ? $demo['Emri'] : ''; ?></td>
-                <td><?php echo isset($demo['Email']) ? $demo['Email'] : ''; ?></td>
-                <td><?php echo isset($demo['Password']) ? $demo['Password'] : ''; ?></td>
-                <td><a href='editdemo.php?id=<?php echo $demo['id'] ?>'>Edit</a></td>
-                <td><a href='deletedemo.php?id=<?php echo $demo['id'] ?>'>Delete</a></td>
-            </tr>
-        <?php } ?>
+            <?php foreach ($demos as $demo) : ?>
+                <tr class="button">
+                    <td><?= isset($demo['id']) ? $demo['id'] : ''; ?></td>
+                    <td><?= isset($demo['Emri']) ? $demo['Emri'] : ''; ?></td>
+                    <td><?= isset($demo['Email']) ? $demo['Email'] : ''; ?></td>
+                    <td><?= isset($demo['Password']) ? $demo['Password'] : ''; ?></td>
+                    <td><a href='editdemo.php?id=<?= $demo['id'] ?>'>Edit</a></td>
+                    <td><a href='deletedemo.php?id=<?= $demo['id'] ?>'>Delete</a></td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </body>
+
 </html>

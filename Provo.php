@@ -23,11 +23,14 @@
         
         <div id="a4"><button id="loginn">Log in</button ></div>
         <div id="a6"> <button id="Singinn">Sing in</button></a></div>
+       <div id="a5"> <a href="provo.php?page=hotelet">Index</a></div>
 
  </div>
  </div>
-     
-    </div>
+ </div>
+
+
+
     </head>
     <body style="background-color:rgb(223, 229, 235);" id="mainBody">
 

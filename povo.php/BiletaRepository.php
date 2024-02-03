@@ -61,5 +61,20 @@ class BiletaRepository extends HotelsRepository {
         $count = $statement->fetchColumn();
         return $count == 0;
     }
+    public function updateBileta($biletaId, $biletaName, $vendiNisjes, $vendiMberritjes, $kohaQendrimit, $qmimi, $nrPersona, $newImagePath) {
+            $query = "UPDATE bilet SET Emri = :biletaName, Vendinis = :vendiNisjes, Kohezgjatja = :kohaQendrimit, Qmimi = :qmimi, Nrpersonav = :nrPersona, img = :newImagePath, Vendimb = :vendiMberritjes WHERE id = :biletaId";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bindParam(':biletaName', $biletaName);
+            $stmt->bindParam(':vendiNisjes', $vendiNisjes);
+            $stmt->bindParam(':vendiMberritjes', $vendiMberritjes);
+            $stmt->bindParam(':kohaQendrimit', $kohaQendrimit);
+            $stmt->bindParam(':qmimi', $qmimi);
+            $stmt->bindParam(':nrPersona', $nrPersona);
+            $stmt->bindParam(':newImagePath', $newImagePath);
+            $stmt->bindParam(':biletaId', $biletaId);
+    
+            $stmt->execute();
+    
+    }
 }
 ?>
