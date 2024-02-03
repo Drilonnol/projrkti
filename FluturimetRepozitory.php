@@ -32,5 +32,11 @@ class FluturimetRepository {
 
         echo "<script>alert('U shtua me sukses!')</script>";
     }
+    function deleteFluturimi($id){
+        $conn = $this->connection;
+        $sql = "DELETE FROM fluturimet WHERE id=?";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$id]);
+    }
 }
 ?>

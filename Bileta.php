@@ -1,5 +1,5 @@
 <?php
-include_once 'BiletaK.php';
+include_once 'Biletat.php';
 include_once 'BiletaRepozitory.php';
 
 if (isset($_POST['submit'])) {
@@ -8,11 +8,11 @@ if (isset($_POST['submit'])) {
     $deri = isset($_POST['deri']) ? htmlspecialchars($_POST['deri']) : null;
     $data = isset($_POST['data']) ? htmlspecialchars($_POST['data']) : null;
 
-    $bileta = new Biletes(null, $emri, $nga, $deri, $data);
+    $bileta = new Biletat($emri, $nga, $deri, $data);
     $biletaRepository = new BiletaRepository();
-    $biletaRepository->insertHotel($bileta);
+    $biletaRepository->insertBileta($bileta);
 
-    header("location:Biletat.php");
+    header("location:Bileta.php");
     exit(); 
 }
 

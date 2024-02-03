@@ -1,7 +1,7 @@
 <?php
     include('conectionnew.php');
-    $sql = "SELECT * FROM tb_data2";
-$rezultati = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM biletat_shtohen";
+    $rezultati = mysqli_query($conn, $sql);
 
 ?>
 <!DOCTYPE html>
@@ -48,12 +48,9 @@ $rezultati = mysqli_query($conn, $sql);
     <thead>
       <tr>
         <th>Emri</th>
-        <th>Mosha</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Shtetsia</th>
-        <th>Gjinia</th>
-        <th>Gjuha</th>
+        <th>Nga</th>
+        <th>Deri</th>
+        <th>Data</th>
       </tr>
     </thead>
     <tbody>
@@ -62,13 +59,10 @@ $rezultati = mysqli_query($conn, $sql);
                 while ($input = mysqli_fetch_array($rezultati)) :
                     ?>
                     <tr>
-                    <td><?php echo isset($input['Emri']) ? $input['Emri'] : ''; ?></td>
-                        <td><?php echo isset($input['Mosha']) ? $input['Mosha'] : ''; ?></td>
-                        <td><?php echo isset($input['Email']) ? $input['Email'] : ''; ?></td>
-                        <td><?php echo isset($input['Pass']) ? $input['Pass'] : ''; ?></td>
-                        <td><?php echo isset($input['Shteti']) ? $input['Shteti'] : ''; ?></td>
-                        <td><?php echo isset($input['Gjinia']) ? $input['Gjinia'] : ''; ?></td>
-                        <td><?php echo isset($input['Gjuha']) ? $input['Gjuha'] : ''; ?></td>
+                    <td><?php echo isset($input['EmriBiletes']) ? $input['EmriBiletes'] : ''; ?></td>
+                        <td><?php echo isset($input['Nga']) ? $input['Nga'] : ''; ?></td>
+                        <td><?php echo isset($input['Deri']) ? $input['Deri'] : ''; ?></td>
+                        <td><?php echo isset($input['Data']) ? $input['Data'] : ''; ?></td>
                         <td>Edit</td>
                         <td>Delete</td>
                     </tr>
